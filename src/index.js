@@ -4,3 +4,4 @@
 import './style.scss';  
 import './componentsJS/prodCard';
 import './componentsJS/product-modal';
+import './js/renderComponentsHTML'

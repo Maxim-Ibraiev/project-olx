@@ -1,0 +1,50 @@
+.footer {
+  height: 121px;
+
+  padding-top: 38px;
+
+  &__icon-copyright {
+    width: 18px;
+    height: 18px;
+
+    margin-right: 5px;
+
+    text-align: center;
+  }
+
+  &__favorite-heart {
+    width: 16px;
+    height: 16px;
+    margin: 0 7px;
+  }
+
+  &__vector {
+    height: 20px;
+    margin-left: 9px;
+    margin-right: 9px;
+    border-right: 1px solid #e2e3e5;
+  }
+
+  &__vector--hidden {
+    display: none;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $mobile-upper) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 83px;
+
+    padding: 0;
+
+    &__vector--hidden {
+      display: block;
+    }
+  }
+}
