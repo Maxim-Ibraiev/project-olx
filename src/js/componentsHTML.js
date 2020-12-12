@@ -1,3 +1,4 @@
-const footer = require('../partials/footer.handlebars')
+const footer = require('../partials/footer.handlebars');
+const productModal = require('../partials/product-modal.handlebars');
 
-export default [footer]
+export default [productModal, footer];
