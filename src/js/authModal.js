@@ -99,3 +99,7 @@ email.addEventListener("input", function (event) {
 // // //     if (password) { password.setCustomValidity(message)
 // // //     }
 // // // })
+ // Регистрация 
+fetch(urlAuthRegister, option)
+ .then((r) => r.json())
+ .then(console.log);
