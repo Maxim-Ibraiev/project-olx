@@ -18,6 +18,7 @@ h2,
 h3,
 h4,
 p {
+<<<<<<< HEAD
 	margin: 0;
 	padding: 0;
 }
@@ -25,6 +26,31 @@ p {
 body {
 	margin-right: auto;
 	margin-left: auto;
+=======
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin-right: auto;
+  margin-left: auto;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.14;
+>>>>>>> Dev
 
 	font-family: 'Roboto', sans-serif;
 	font-style: normal;
@@ -32,6 +58,7 @@ body {
 	font-size: 14px;
 	line-height: 1.14;
 
+<<<<<<< HEAD
 	letter-spacing: 0.02em;
 
 	color: $basic;
@@ -62,4 +89,25 @@ body {
 	display: inline-block;
 	width: 24px;
 	height: 24px;
+=======
+  color: $basic;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $mobile-upper) {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  @media screen and (min-width: $table-upper) {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: $table-upper;
+  }
+>>>>>>> Dev
 }

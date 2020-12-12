@@ -1,0 +1,217 @@
+{{!-- is-hidden-если надо отобразить модалку уберите это из класса бэкдропа --}}
+<div class="backdrop is-hidden" data-backdrop>
+        <div class="add-modal">
+          <button
+            type="button"
+            class="add-modal__close-btn"
+            data-close="true"
+          ></button>
+
+          <h2 class="add-modal__form--title">Додати оголошення</h2>
+
+          <form class="add-modal__form" name="addForm">
+            <div>
+              <div class="input-wrapper">
+                <p class="add-modal__product-name-title">Назва товару</p>
+                <input
+                  type="text"
+                  name="productName"
+                  class="add-modal__product-name input"
+                  id=""
+                  data-source="name"
+                  autocomplete="off"
+                  minlength="2"
+                  maxlength="20"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="input-wrapper">
+                <p class="add-modal__product-photos-title">Фото</p>
+                <ul class="add-modal__product-photos">
+                  <li class="add-modal__product-photos-item">
+                    <input
+                      class="photo-input"
+                      data-id="1"
+                      data-active="true"
+                      name=""
+                      id="fp1"
+                    />
+                    <label class="input-label choose-this" for="fp1"
+                      ><img
+                        src=""
+                        class="input-label__img input-label__img--1"
+                        width="75"
+                        height="58"
+                        alt=""
+                    /></label>
+                  </li>
+                  <li class="add-modal__product-photos-item">
+                    <input
+                      class="photo-input"
+                      data-id="2"
+                      data-active=""
+                      name=""
+                      id="fp2"
+                    />
+                    <label class="input-label" for="fp2"
+                      ><img
+                        src=""
+                        class="input-label__img input-label__img--2"
+                        width="75"
+                        height="58"
+                        alt=""
+                    /></label>
+                  </li>
+                  <li class="add-modal__product-photos-item">
+                    <input
+                      class="photo-input"
+                      data-id="3"
+                      data-active=""
+                      name=""
+                      id="fp3"
+                    />
+                    <label class="input-label" for="fp3"
+                      ><img
+                        src=""
+                        class="input-label__img input-label__img--3"
+                        width="75"
+                        height="58"
+                        alt=""
+                    /></label>
+                  </li>
+                  <li class="add-modal__product-photos-item">
+                    <input
+                      class="photo-input"
+                      data-id="4"
+                      data-active=""
+                      name=""
+                      id="fp4"
+                    />
+                    <label class="input-label" for="fp4"
+                      ><img
+                        src=""
+                        class="input-label__img input-label__img--4"
+                        width="75"
+                        height="58"
+                        alt=""
+                    /></label>
+                  </li>
+                  <li class="add-modal__product-photos-item">
+                    <input
+                      class="photo-input"
+                      data-id="5"
+                      data-active=""
+                      name=""
+                      id="fp5"
+                    />
+                    <label class="input-label" for="fp5"
+                      ><img
+                        src=""
+                        class="input-label__img input-label__img--5"
+                        width="75"
+                        height="58"
+                        alt=""
+                    /></label>
+                  </li>
+                  <li class="add-modal__product-photos-item">
+                    <input
+                      class="photo-input"
+                      data-id="6"
+                      data-active=""
+                      name=""
+                      id="fp6"
+                    />
+                    <label class="input-label" for="fp6"
+                      ><img
+                        src=""
+                        class="input-label__img input-label__img--6"
+                        width="75"
+                        height="58"
+                        alt=""
+                    /></label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="input-wrapper">
+                <p class="add-modal__product-description-title">Опис товару</p>
+                <textarea
+                  name="productDescription"
+                  data-source="description"
+                  class="add-modal__product-description input"
+                  id=""
+                  maxlength="245"
+                  placeholder=""
+                ></textarea>
+              </div>
+
+              <div class="input-wrapper">
+                <p class="add-modal__product-select-title">Категорія товару</p>
+                <div class="select">
+                  <select
+                    name="productCategory"
+                    class="add-modal__product-select input"
+                    id=""
+                  >
+                    <option
+                      value="category"
+                      class="select-option select-option-first"
+                      selected
+                    ></option>
+                    <option value="property" class="select-option">
+                      Нерухомість
+                    </option>
+                    <option value="transport" class="select-option">
+                      Транспорт
+                    </option>
+                    <option value="work" class="select-option">Работа</option>
+                    <option value="electronics" class="select-option">
+                      Электроніка
+                    </option>
+                    <option value="business-and-services" class="select-option">
+                      Бізнес та послуги
+                    </option>
+                    <option value="recreation-and-sports" class="select-option">
+                      Відпочинок та спорт
+                    </option>
+                    <option value="free" class="select-option">
+                      Віддам безкоштовно
+                    </option>
+                    <option value="trade" class="select-option">Обмін</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-wrapper">
+                <p class="add-modal__product-price-title">Ціна</p>
+                <input
+                  type="text"
+                  name="productPrice"
+                  data-source="price"
+                  class="add-modal__product-price input"
+                  autocomplete="off"
+                  minlength="1"
+                  maxlength="16"
+                  placeholder="0.00 грн"
+                />
+              </div>
+
+              <div class="input-wrapper">
+                <p class="add-modal__product-telephone-number-title">Телефон</p>
+                <input
+                  type="tel"
+                  name="productPhone"
+                  data-source="phone"
+                  class="add-modal__product-telephone-number input"
+                  id=""
+                  placeholder="+38 (0--) --- -- --"
+                />
+              </div>
+            </div>
+            <button type="submit" class="add-product-btn" data-close="">
+              Додати
+            </button>
+          </form>
+        </div>
+      </div>

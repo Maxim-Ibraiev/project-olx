@@ -1,0 +1,150 @@
+.auth{
+    max-width: 320px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @media screen and (min-width: $mobile-upper) {
+        margin-right: 59px;
+        margin-left: 59px;
+      }
+}
+
+.auth-modal{
+    position: relative;
+    background-color: $modalbgc;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+    padding-top: 57px;
+
+    @media screen and (min-width: $mobile-upper) {
+        padding-left: 103px;
+        padding-right: 102px; 
+  }
+  
+  &-close{
+      position: absolute;
+      top: 15px;
+      right: 14px;
+      background-color: inherit;
+      border:none;
+  }
+}
+        
+.auth-modal-title{
+    // width: 442px;
+    // display: block;
+    margin-bottom: 20px;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+
+    @media screen and (min-width: $mobile-upper) {
+        width: 442px;
+    }
+}
+
+.primary{
+    @media screen and (min-width: $mobile-upper) {
+    text-align: center;
+    margin-bottom: 34px;
+    }    
+}
+    
+.secondary{
+    @media screen and (min-width: $mobile-upper) {
+        margin-bottom: 37px;
+    }
+}
+
+.auth-modal-button-google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 41px;
+    width: 142px;
+    height: 51px;
+    border: none;
+    background-color: #fff;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    &-text{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    &-icon{
+        margin-right: 10px;
+    }
+}
+
+.auth-modal-form{
+    margin-top: 25px;
+}
+
+.auth-modal-input{
+    display: block;
+    width: 251px;
+    height: 56px;
+    padding-left: 25px;
+    justify-content: center;
+    // color:  #BBBBBB; цвет плейсхолдера надо поменять
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #BBBBBB;
+
+    @media screen and (min-width: $mobile-upper) {
+        width: 442px;
+    }
+}
+   
+.email{
+    margin-bottom: 15px;
+}
+
+.password{
+    margin-bottom: 31px;
+}
+
+.auth-modal-button{
+    align-items: center;
+    text-align: center;
+    width: 118px;
+    height: 50px;
+    @media screen and (min-width: $mobile-upper) {
+        width: 210px;
+    }
+}
+
+.sign-in{
+    margin-right: 9px;
+    border: none;
+    background-color:#FF6B09;
+
+    @media screen and (min-width: $mobile-upper) {
+        margin-right: 20px;
+    }
+
+    &-text{
+        color:#fff;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+    }
+}
+
+.log-in{
+    border: 1px solid #BBBBBB;
+    background-color: $modalbgc;
+
+    &-text{
+        color:$basic;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+    }
+}
+
+
+
+

@@ -1,6 +1,6 @@
-const refs = {
-  body: document.querySelector('body'),
-  productContainer: document.querySelector('.product-container'),
-}
+import refs from './renderComponentsHTML'
+
+refs.MyCallSavaBtn = document.querySelector('.my-calls-btn-org')
+
 
 export default refs;

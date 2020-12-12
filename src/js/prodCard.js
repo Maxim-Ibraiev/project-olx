@@ -1,5 +1,4 @@
-const oldPriceEl = document.querySelectorAll(".prod_card-old_price");
-console.log(oldPriceEl);  
+const oldPriceEl = document.querySelectorAll(".prod_card-old_price"); 
 oldPriceEl.forEach(el=>{
     if(el.textContent !== "") {
     el.classList.add("cross_out") // додає закреслювання на стару ціну 

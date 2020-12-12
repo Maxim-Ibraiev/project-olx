@@ -1,19 +1,22 @@
-<div class="product_container row justify-content-center">
+<div class="cards_wrapper">
 {{#each this}}
-    <div class="prod_card col-md-6 col-xl-3 ">
-  
-        <a class="prod_card-link" href="{{product-link}}">
-          <div class="prod_card-inner_wrapper">
-            <img src={{small-img}} alt="">
-            <div class="prod_card-description">
-              <div class="prod_card-position">{{prod-name}}</div>
-              <div class="prod_card-price_box">
-                 <span class="prod_card-old_price">{{price}}</span>
-                 <span class="prod_card-new_price">{{sale-price}}</span>
-            </div>
-            </div>
-          </div>
-        </a>
-    </div>
-{{/each}}
+  <div class="prod_card">
+    <a class="prod_card-link" href="#">
+      <div class="prod_card-inner_wrapper">
+        <img class="prod_card-image" src="#" alt="">
+        <div class="cover">
+          <div class="heart_icon-wrapper"></div>
+          <div class="fullscreen_icon-wrapper"></div>
+        </div>
+        <div class="prod_card-description">
+          <div class="prod_card-position">{{prod-name}}</div>
+          <div class="prod_card-price_box">
+             <span class="prod_card-old_price">{{price}}</span>
+             <span class="prod_card-new_price">{{sale-price}}</span>
+        </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {{/each}}
 </div>
