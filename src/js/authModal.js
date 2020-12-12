@@ -117,3 +117,4 @@ const urlAuthRegister = `${BASE_URL}/auth/login`;
 fetch(urlAuthRegister, option)
  .then((r) => r.json())
  .then(console.log);
+
