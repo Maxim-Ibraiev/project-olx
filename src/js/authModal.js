@@ -22,7 +22,7 @@ email.addEventListener("input", function (event) {
     email.setCustomValidity("");
   }
 });
-// вамым
+
 // import axios from 'axios';
 
 // const BASE_URL = 'https://callboard-backend.herokuapp.com';
@@ -57,47 +57,42 @@ const handleRegisterSubmit = event => {
 }
 
 // logInButton.addEventListener('click', handleRegisterSubmit)
-registerFormRef.addEventListener('submit', handleRegisterSubmit)
+
+import axios from 'axios';
+
+const BASE_URL = 'https://callboard-backend.herokuapp.com';
+
+const registerUser = userData => {
+    const { email, password } = userData;
+    return axios.post(`${BASE_URL}/auth/register`, {email, password});
+}
+const postToAdd = {
+  email: document.querySelector('#mail'),
+  password: document.querySelector('#password')
+};
 
 
 
+const registerFormRef = document.querySelector('.auth-modal-form');
+// console.log(registerFormRef)
+const handleRegisterSubmit = event => {
+    event.preventDefault();
+
+    const { currentTarget: form } = event;
+    const formData = new FormData(form);
+    const body = {}
 
 
-// // const option = {
-// //   method: 'POST',
-// //   body: JSON.stringify(postToAdd),
-// //   headers: {
-// //     'Content-Type': 'application/json; charset=UTF-8',
-// //   },
-// // };
+    formData.forEach((value, key)=> {
+        body[key] = value;
+    })
+    console.log(body)
+    // console.log(formData);
+    // formData.forEach((value, key) => {
+    //     console.log(key.value);
+    // })    
+    registerUser(body)
+        .then(result => console.log(result))
+}
 
-// // const urlAuthRegister = `${BASE_URL}/auth/register`;
-
-// //  // Регистрация 
-// // fetch(urlAuthRegister, option)
-// //  .then((r) => r.json())
-// //  .then(console.log);
-
-// //  const urlAuthLogin = `${BASE_URL}/auth/login`;
- 
-// // fetch(urlAuthLogin, option)
-// //   .then(r => r.json())
-// //   .then(console.log);
-
-// // const urlAuthUser = `${BASE_URL}/user`;
-
-// // fetch(urlAuthUser, {
-// //   method: 'GET',
-// //   headers: myHeaders,
-// // })
-// //   .then(r => r.json())
-// //   .then(console.log);
-
-// // // password.addEventListener("input", function (event){
-// // //     if (password) { password.setCustomValidity(message)
-// // //     }
-// // // })
-//  // Регистрация 
-// fetch(urlAuthRegister, option)
-//  .then((r) => r.json())
-//  .then(console.log);
+// registerFormRef.addEventListener('submit', handleRegisterSubmit)
