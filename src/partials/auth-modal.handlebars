@@ -1,4 +1,5 @@
-<div class="backdrop is-hidden" data-modal>
+<button class="auth-modal-open" auth-modal-open>Войти\зарегестрироваться</button>  
+<div class="backdrop is-hidden" auth-modal> 
 <div class="container auth">
     <div class= "auth-modal">
         <button class="auth-modal-close">
@@ -29,9 +30,11 @@
          Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:
       </h3>
       <form class="auth-modal-form" action="">
-       <input class="auth-modal-input email" type="text" name="mail" id="mail" placeholder="E-mail">
-       <input class="auth-modal-input password" type="text" name="password" id="password" placeholder="Password">
-      <button class="auth-modal-button sign-in">
+       <input class="auth-modal-input email" type="<!--email-->text" name="mail" id="mail" placeholder = "E-mail" required>
+       <label for="mail" class="auth-input-label"></label>
+       <input class="auth-modal-input password" type="<!--password-->text" name="password" id="password" placeholder = "Password" required> <!--pattern = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$" title="Лише латинські букви [A-z] та цифри [0-9]"-->
+       <label for="password" class="auth-input-label"></label>
+      <button type="submit" class="auth-modal-button sign-in">
         <span class="sign-in-text">
           Увійти
         </span>    

@@ -107,10 +107,12 @@ body.modal-open {
 }
 
 .auth-modal-form{
+    position: relative;
     margin-top: 25px;
 }
 
 .auth-modal-input{
+    position: relative;
     display: block;
     width: 251px;
     height: 56px;
@@ -124,6 +126,25 @@ body.modal-open {
     @media screen and (min-width: $mobile-upper) {
         width: 442px;
     }
+}
+
+.auth-input-label{
+    position: absolute;
+    // top:20px;
+    left:25px;
+    transform: translateY(50%);
+    // margin-bottom: 4px;
+    font-size: 14px;
+    color: #757575;
+    // transition: transform 250ms;
+
+    // &-mail{
+    //     top:20px;
+    // }
+
+    // &-password{
+    //     top:0px;
+    // }
 }
    
 .email{
@@ -173,6 +194,14 @@ body.modal-open {
     }
 }
 
+
+
+// .auth-input-label + .auth-modal-input:focus,
+// .auth-input-label + .auth-modal-input:not(:placeholder-shown) {
+//     color: #2196F3;
+//     transform: translate(-26px, -50px);
+//     // visibility: hidden;
+// }
 
 
 

@@ -18,6 +18,8 @@ import './componentsJS/searchModal';
 // import './componentsJS/prodCard';
 import './js/myCalls'
 
+import './js/myCalls';
+import './js/authModal';
 // import './js/exampleBackend'
 import './js/sliderMurkup';
 import './js/slickSlider';
