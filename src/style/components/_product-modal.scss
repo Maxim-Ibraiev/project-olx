@@ -158,9 +158,11 @@ button {
 }
 
 .close-btn {
-  width: 14px;
-  height: 14px;
   position: absolute;
   top: 25px;
   right: 25px;
+  & svg {
+    width: 14px;
+    height: 14px;
+  }
 }
