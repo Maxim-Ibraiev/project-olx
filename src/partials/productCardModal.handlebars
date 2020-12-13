@@ -1,18 +1,32 @@
 <div class="slider">
-	{{#each this.imageUrls}}
-	<img class="main-photo" src={{this}} alt={{title}}>
-	{{/each}}
+	<div class="main-slider">
+		{{#each this.imageUrls}}
+		<img src={{this}} alt={{title}}>
+		{{/each}}
+	</div>
+	<div class="slider-nav">
+		{{#each this.imageUrls}}
+		<img src={{this}} alt={{title}}>
+		{{/each}}
+	</div>
 </div>
 <div class="product-info">
 	<h3 class="product-name">{{title}}</h3>
 	<p class="product-code">Код товару | 105-С</p>
+	<div class="slider-mobile">
+		{{#each this.imageUrls}}
+		<div class="image-wrapper">
+			<img class="main-photo" src={{this}} alt={{title}}>
+		</div>
+		{{/each}}
+	</div>
 	<div class="product-price">{{price}} грн</div>
 
 	<div class="product-owner js-product-owner">
 		<div class="btn-name">
 			Информация о продавце
 		</div>
-		<div class="product-owner-info">
+		<div class="product-owner-info js-owner-info">
 			<span class="product-owner-name">Ольга <span class="product-owner-date">- на OLX с нояб. 2018</span></span>
 			<span class="product-owner-phone">{{phone}}</span>
 		</div>
