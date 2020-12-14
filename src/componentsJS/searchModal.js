@@ -13,15 +13,22 @@ searchModalSearchIcon.addEventListener('click', searchQuery);
 window.addEventListener('keydown', keyboardPress);
 
 function openSearchModal() { 
-    modal.classList.add('is-open')
+    modal.classList.add('is-open');
+    document.body.classList.add('overflow-hidden');
 }
 
 function closeSearchModal() {
-    modal.classList.remove('is-open')
+    modal.classList.remove('is-open');
+    document.body.classList.remove('overflow-hidden');
 }
 
 function searchQuery() {
-    console.log(searchModalInput.value);
+    if (searchModalInput.value == '') {
+        infoMessage.classList.add('is-open')
+    } else {
+        infoMessage.classList.remove('is-open');
+        console.log(searchModalInput.value);
+    }  
 }
 
 function keyboardPress(event) {
