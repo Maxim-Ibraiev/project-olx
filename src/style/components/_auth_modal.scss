@@ -23,6 +23,7 @@ body.modal-open {
   }
   
   .backdrop.is-hidden .auth-modal {
+
     transform: translate(-50%, -50%) scale(0, 9);
   }
   

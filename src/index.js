@@ -27,4 +27,6 @@ import './js/authModal';
 import './js/sliderMurkup';
 import './js/slickSlider';
 
-import './js/menu';
+import './js/menu'
+// import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
+
