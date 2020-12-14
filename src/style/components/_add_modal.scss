@@ -349,23 +349,23 @@ body.show-modal .modal {
   }
 }
 
-// .add-form__error-message.error-price {
-//   display: none;
-// }
+.add-form__error-message.error-price {
+  display: none;
+}
 
-// .add-form__error-message.error-price.visible {
-//   display: block;
-// }
+.add-form__error-message.error-price.visible {
+  display: block;
+}
 
-// .add-form__error-message {
-//   transition: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-//   opacity: 0;
-// }
+.add-form__error-message {
+  transition: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  opacity: 0;
+}
 
-// .add-form__error-message.visible {
-//   display: block;
-//   opacity: 1;
-//   width: 100%;
-//   color: red;
-//   border-bottom: 1px solid red;
-// }
+.add-form__error-message.visible {
+  display: block;
+  opacity: 1;
+  width: 100%;
+  color: red;
+  border-bottom: 1px solid red;
+}

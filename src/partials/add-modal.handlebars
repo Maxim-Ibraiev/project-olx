@@ -1,7 +1,3 @@
-{{!-- <button class="header__create-add-btn modal-btn" data-action="open-modal">
-            СТВОРИТИ ОГОЛОШЕННЯ
-          </button> --}}
-
 <div class="add-backdrop js-backdrop">
         <div class="add-modal">
           <button
@@ -28,7 +24,7 @@
                   placeholder=""
                 />
                 {{!-- <div class="add-form__error-message">
-                Введіть коректну назву товару
+                Введіть мінімум 3 максимум 15 символів!
               </div> --}}
               </div>
 
@@ -56,7 +52,9 @@
                   </li>
                   <li class="add-modal__product-photos-item">
                     <input
-                      class="photo-input"
+                    accept=".jpg"
+                    type="file"
+                      class="photo-input add-image"
                       data-id="2"
                       data-active=""
                       name=""
@@ -73,7 +71,9 @@
                   </li>
                   <li class="add-modal__product-photos-item">
                     <input
-                      class="photo-input"
+                    accept=".jpg"
+                    type="file"
+                      class="photo-input add-image"
                       data-id="3"
                       data-active=""
                       name=""
@@ -90,7 +90,9 @@
                   </li>
                   <li class="add-modal__product-photos-item">
                     <input
-                      class="photo-input"
+                    accept=".jpg"
+                    type="file"
+                      class="photo-input add-image"
                       data-id="4"
                       data-active=""
                       name=""
@@ -107,7 +109,9 @@
                   </li>
                   <li class="add-modal__product-photos-item">
                     <input
-                      class="photo-input"
+                    accept=".jpg"
+                    type="file"
+                      class="photo-input add-image"
                       data-id="5"
                       data-active=""
                       name=""
@@ -124,7 +128,9 @@
                   </li>
                   <li class="add-modal__product-photos-item">
                     <input
-                      class="photo-input"
+                    accept=".jpg"
+                    type="file"
+                      class="photo-input add-image"
                       data-id="6"
                       data-active=""
                       name=""
@@ -141,7 +147,7 @@
                   </li>
                 </ul>
                 {{!-- <div class="add-form__error-message">
-                Потрібно добавити від 1-го до 5-ти фото
+                Додайте від 1-го до 5-ти фото!
               </div> --}}
               </div>
 
@@ -157,7 +163,7 @@
                   placeholder=""
                 ></textarea>
                 {{!-- <div class="add-form__error-message">
-                Коректний опис товару - мінімум 30 символів
+                Введіть мінімум 5 символів!
               </div> --}}
               </div>
 
@@ -200,8 +206,8 @@
                       </option> --}}
                   </select>
                   {{!-- <div class="add-form__error-message">Виберіть категорію</div>
-            </div> --}}
-                </div>
+            </div>
+                </div> --}}
               </div>
 
               <div class="input-wrapper">
@@ -218,10 +224,10 @@
                   placeholder="0.00 грн"
                 />
                 {{!-- <div class="add-form__error-message">
-                Введіть коректну ціну товару
+                Введіть коректну ціну товару!
               </div>
               <div class="add-form__error-message error-price">
-                Ціна для цїєї категорії має бути 0
+                Ціна не може бути більше 0!
               </div> --}}
               </div>
 
@@ -235,7 +241,7 @@
                   class="add-modal__product-telephone-number _phone _req input"
                   placeholder="+38 (0--) --- -- --"
                 />
-                {{!-- <div class="add-form__error-message">Введіть номер телефону</div> --}}
+                {{!-- <div class="add-form__error-message">Введіть коректний номер телефону!</div> --}}
               </div>
             </div>
             <button type="submit" class="add-product-btn" data-close="">
