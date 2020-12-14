@@ -2,7 +2,7 @@
 //   overflow: hidden;
 // }
 
-body.show-modal .backdrop {
+body.show-modal .add-backdrop {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
@@ -12,7 +12,7 @@ body.show-modal .modal {
   transform: scale(1);
 }
 
-.backdrop {
+.add-backdrop {
   display: flex;
   justify-content: center;
   align-items: center;

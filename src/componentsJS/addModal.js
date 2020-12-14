@@ -2,7 +2,7 @@ const refs = {
   form: document.querySelector('.js-add-form'),
   openAddModalBtn: document.querySelector('[data-action="open-modal"]'),
   closeAddModalBtn: document.querySelector('[data-action="close-modal"]'),
-  backdrop: document.querySelector('.js-backdrop'),
+  addBackdrop: document.querySelector('.js-backdrop'),
   selectorCategory: document.querySelector('.add-modal__product-select'),
   imgLoaderArea: document.querySelector('.add-modal__product-photos'),
   addImage: document.querySelector('.add-image'),
@@ -11,7 +11,7 @@ const refs = {
 // Логика закрытия модалки по кнопке закрыть, искейпу и бэкдропу
 refs.openAddModalBtn.addEventListener('click', onOpenAddModal);
 refs.closeAddModalBtn.addEventListener('click', onCloseAddModal);
-refs.backdrop.addEventListener('click', onBackdropClick);
+refs.addBackdrop.addEventListener('click', onBackdropClick);
 
 function onOpenAddModal() {
   window.addEventListener('keydown', onEscKeyPress);
