@@ -23,6 +23,7 @@ body.modal-open {
   }
   
   .backdrop.is-hidden .auth-modal {
+
     transform: translate(-50%, -50%) scale(0, 9);
   }
   
@@ -165,7 +166,7 @@ body.modal-open {
     }
 }
 
-.sign-in{
+.log-in{
     margin-right: 9px;
     border: none;
     background-color:#FF6B09;
@@ -182,7 +183,7 @@ body.modal-open {
     }
 }
 
-.log-in{
+.sign-in{
     border: 1px solid #BBBBBB;
     background-color: $modalbgc;
 
