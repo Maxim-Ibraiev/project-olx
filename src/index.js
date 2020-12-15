@@ -17,5 +17,7 @@ import './js/category';
 import './js/myCalls'
 
 // import './js/exampleBackend'
+import './js/sliderMurkup';
+import './js/slickSlider';
 
 import './js/menu';
