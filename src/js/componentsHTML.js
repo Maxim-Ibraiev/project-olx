@@ -7,4 +7,4 @@ const myCalls = require('../partials/my-calls.handlebars');
 const footer = require('../partials/footer.handlebars');
 const searchModal = require('../partials/search-modal.handlebars');
 
-export default [header,authModal, searchModal, addModal, myCalls, footer]
+export default [header,authModal, category, searchModal, addModal, myCalls, footer]
