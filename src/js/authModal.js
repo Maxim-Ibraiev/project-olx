@@ -26,7 +26,59 @@ email.addEventListener("input", function (event) {
 
 // import axios from 'axios';
 
-// const BASE_URL = 'https://callboard-backend.herokuapp.com';
+const BASE_URL = 'https://callboard-backend.herokuapp.com';
+
+const logInBtnRef = document.querySelector('.log-in');
+const signInBtnRef = document.querySelector('.sign-in');
+// const authModalInputRef = document.querySelectorAll('.auth-modal-input');
+const registerFormRef = document.querySelector('.auth-modal-form');
+
+const urlAuthLogin = `${BASE_URL}/auth/login`;
+const urlAuthSignin = `${BASE_URL}/auth/register`;
+logInBtnRef.addEventListener('click', getAuthInputData)
+
+function getAuthInputData (event) {
+   const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
+   const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
+     acc.push(el.value)
+     return acc
+   },[])
+  
+  authInputData.email = arrValue[0]
+  authInputData.password = arrValue[1]
+  console.log(authInputData);
+
+const toFetchData = {
+  email: authInputData.email,
+  password: authInputData.password,
+};
+
+const option = {
+  method: 'POST',
+  body: JSON.stringify(toFetchData),
+  headers: {
+    'Content-Type': 'application/json; charset=UTF-8',
+  },
+};
+
+const myHeaders = new Headers();
+
+myHeaders.append('Content-Type', 'application/json');
+myHeaders.append(
+  'Authorization',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
+);
+
+ // Log-in
+
+fetch(urlAuthLogin, option)
+ .then((r) => r.json())
+ .then(console.log);
+}
+
+
+
+
 
 // const registerUser = userData => {
 //     const { email, password } = userData;
@@ -82,33 +134,4 @@ email.addEventListener("input", function (event) {
 
 // // registerFormRef.addEventListener('submit', handleRegisterSubmit)
 
-// const BASE_URL = 'https://callboard-backend.herokuapp.com';
-
-// const postToAdd = {
-//     email: 'user5468878994545@example.com',
-//     password: 'qwerty123',
-//   };
-
-//  const option = {
-//    method: 'POST',
-//    body: JSON.stringify(postToAdd),
-//    headers: {
-//      'Content-Type': 'application/json; charset=UTF-8',
-//    },
-//  };
-
-//  const myHeaders = new Headers();
-
-// myHeaders.append('Content-Type', 'application/json');
-// myHeaders.append(
-//   'Authorization',
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-// );
-
-// const urlAuthRegister = `${BASE_URL}/auth/login`;
-
-//  // Регистрация 
-// fetch(urlAuthRegister, option)
-//  .then((r) => r.json())
-//  .then(console.log);
 
