@@ -1,4 +1,130 @@
-<div class="add-backdrop js-backdrop">
+<div class="add-modal__overlay">
+  <div class="add-modal">
+    <div class="add-modal__content">
+      <button type="button" class="add-modal__close-btn" data-close="true">
+        <svg class="add-modal__close-icon">
+          <use href="/src/images/symbol-defs.svg#icon-close"></use>
+        </svg>
+      </button>
+
+      <h2 class="add-form__title">Додати оголошення</h2>
+
+      <form action="#" class="add-form js-add-form">
+        <div class="form-items-wrapper">
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-name">Назва товару</label>
+            <div class="input-wrapper">
+              <input
+                id="form-name"
+                type="text"
+                class="add-form__name _req _name input"
+              />
+              <div class="add-form__error-message">
+                Додайте назву товару!
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label">Фото</label>
+            <div class="input-wrapper">
+              <ul class="image-preview__add _req">
+                <li class="image-preview__item">
+                  <div class="choose-image">
+                    <input
+                      accept=".jpg"
+                      type="file"
+                      class="choose-image__input add-image"
+                    />
+                    <div class="image-button">+</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="add-form__error-message">
+                Додайте від 1-го до 5-ти фото!
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-description"
+              >Опис товару</label
+            >
+            <div class="input-wrapper">
+              <textarea
+                name="description"
+                id="form-description"
+                class="add-form__description _description _req input"
+              ></textarea>
+              <div class="add-form__error-message">
+                Додайте опис товару - мінімум 5 символів!
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <div class="add-form__label">Категорія товару</div>
+            <div class="select-wrapper">
+              <select
+                name="product-category"
+                class="add-form__select _category _req input"
+              >
+                <option
+                  value="category"
+                  class="select-option select-option-first"
+                >
+                  Категорія
+                </option>
+              </select>
+              <div class="add-form__error-message">Додайте категорію</div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-price">Ціна</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="form-price"
+                name="productPrice"
+                data-source="price"
+                class="add-form__product-price _price _req input"
+                autocomplete="off"
+                minlength="1"
+                maxlength="16"
+                placeholder="0.00 грн"
+              />
+              <div class="add-form__error-message">
+                Додайте ціну товару!
+              </div>
+              <div class="add-form__error-message error-price">
+                Ціна для вибраної категорії повинна бути 0!
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-phone">Телефон</label>
+            <div class="input-wrapper">
+              <input
+                id="form-phone"
+                type="tel"
+                name="productPhone"
+                data-source="phone"
+                class="add-form__product-telephone-number _phone _req input"
+                placeholder="+38(0--) --- -- --"
+              />
+              <div class="add-form__error-message">Додайте номер телефону!</div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="add-product-btn">Додати</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{!-- <div class="add-backdrop js-backdrop">
         <div class="add-modal">
           <button
             type="button"
@@ -19,14 +145,12 @@
                   id="form-name"
                   data-source="name"
                   autocomplete="off"
-                  {{!-- minlength="3"
-                  maxlength="15" --}}
                   placeholder=""
-                />
+                /> --}}
                 {{!-- <div class="add-form__error-message">
                 Введіть мінімум 3 максимум 15 символів!
               </div> --}}
-              </div>
+              {{!-- </div>
 
               <div class="input-wrapper">
                 <p class="add-modal__product-photos-title">Фото</p>
@@ -158,8 +282,6 @@
                   data-source="description"
                   class="add-modal__product-description _description _req input"
                   id=""
-                  {{!-- minlength="15"
-                  maxlength="245" --}}
                   placeholder=""
                 ></textarea>
                 {{!-- <div class="add-form__error-message">
@@ -179,7 +301,7 @@
                       value="category"
                       class="select-option select-option-first"
                       selected
-                    ></option>
+                    ></option> --}}
                     {{!-- <option value="property" class="select-option">
                       Нерухомість
                     </option>
@@ -204,11 +326,11 @@
                     <option value="trade" class="select-option">
                       Обмін
                       </option> --}}
-                  </select>
+                  {{!-- </select> --}}
                   {{!-- <div class="add-form__error-message">Виберіть категорію</div>
             </div>
                 </div> --}}
-              </div>
+              {{!-- </div>
 
               <div class="input-wrapper">
                 <p class="add-modal__product-price-title">Ціна</p>
@@ -219,17 +341,15 @@
                   data-source="price"
                   class="add-modal__product-price _price _req input"
                   autocomplete="off"
-                  {{!-- minlength="1"
-                  maxlength="16" --}}
                   placeholder="0.00 грн"
-                />
+                /> --}}
                 {{!-- <div class="add-form__error-message">
                 Введіть коректну ціну товару!
               </div>
               <div class="add-form__error-message error-price">
                 Ціна не може бути більше 0!
               </div> --}}
-              </div>
+              {{!-- </div>
 
               <div class="input-wrapper">
                 <p class="add-modal__product-telephone-number-title">Телефон</p>
@@ -240,13 +360,13 @@
                   data-source="phone"
                   class="add-modal__product-telephone-number _phone _req input"
                   placeholder="+38 (0--) --- -- --"
-                />
+                /> --}}
                 {{!-- <div class="add-form__error-message">Введіть коректний номер телефону!</div> --}}
-              </div>
+              {{!-- </div>
             </div>
             <button type="submit" class="add-product-btn" data-close="">
               Додати
             </button>
           </form>
         </div>
-      </div>
+      </div> --}}
