@@ -1,4 +1,32 @@
-.auth{
+body.modal-open {
+    overflow: hidden;
+  }
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 100%;
+  
+    background-color: rgba(0, 0, 0, 0.7);
+  
+    opacity: 1;
+    overflow-y: scroll;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .backdrop.is-hidden .auth-modal {
+    transform: translate(-50%, -50%) scale(0, 9);
+  }
+  
+  .auth{
     max-width: 320px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -79,10 +107,12 @@
 }
 
 .auth-modal-form{
+    position: relative;
     margin-top: 25px;
 }
 
 .auth-modal-input{
+    position: relative;
     display: block;
     width: 251px;
     height: 56px;
@@ -96,6 +126,25 @@
     @media screen and (min-width: $mobile-upper) {
         width: 442px;
     }
+}
+
+.auth-input-label{
+    position: absolute;
+    // top:20px;
+    left:25px;
+    transform: translateY(50%);
+    // margin-bottom: 4px;
+    font-size: 14px;
+    color: #757575;
+    // transition: transform 250ms;
+
+    // &-mail{
+    //     top:20px;
+    // }
+
+    // &-password{
+    //     top:0px;
+    // }
 }
    
 .email{
@@ -116,7 +165,7 @@
     }
 }
 
-.sign-in{
+.log-in{
     margin-right: 9px;
     border: none;
     background-color:#FF6B09;
@@ -133,7 +182,7 @@
     }
 }
 
-.log-in{
+.sign-in{
     border: 1px solid #BBBBBB;
     background-color: $modalbgc;
 
@@ -145,6 +194,14 @@
     }
 }
 
+
+
+// .auth-input-label + .auth-modal-input:focus,
+// .auth-input-label + .auth-modal-input:not(:placeholder-shown) {
+//     color: #2196F3;
+//     transform: translate(-26px, -50px);
+//     // visibility: hidden;
+// }
 
 
 
