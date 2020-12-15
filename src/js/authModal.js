@@ -22,6 +22,7 @@ email.addEventListener("input", function (event) {
     email.setCustomValidity("");
   }
 });
+// вамым
 // import axios from 'axios';
 
 // const BASE_URL = 'https://callboard-backend.herokuapp.com';
