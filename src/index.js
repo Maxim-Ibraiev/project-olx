@@ -11,7 +11,9 @@ import heartfill from './images/heartfill.png';
 // import './js/cardAddToFavorites'
 import './componentsJS/addModal';
 import './componentsJS/myCalls';
-import './js/category';
+import './componentsJS/searchModal';
+// import './componentsJS/prodCard';
+// import './js/category';
 
 // import './componentsJS/prodCard';
 import './js/myCalls'
