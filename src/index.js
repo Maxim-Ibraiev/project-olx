@@ -13,7 +13,7 @@ import './componentsJS/addModal';
 import './componentsJS/myCalls';
 import './componentsJS/searchModal';
 // import './componentsJS/prodCard';
-import './js/category';
+// import './js/category';
 
 // import './componentsJS/prodCard';
 import './js/myCalls'
