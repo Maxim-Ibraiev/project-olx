@@ -96,7 +96,7 @@ registerFormRef.addEventListener('submit', handleRegisterSubmit)
 // // //     if (password) { password.setCustomValidity(message)
 // // //     }
 // // // })
- // Регистрация 
-fetch(urlAuthRegister, option)
- .then((r) => r.json())
- .then(console.log);
+//  // Регистрация 
+// fetch(urlAuthRegister, option)
+//  .then((r) => r.json())
+//  .then(console.log);
