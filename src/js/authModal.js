@@ -1,27 +1,27 @@
 (() => {
-    const refs = {
-      openAuthModalBtn: document.querySelector('[auth-modal-open]'),
-      closeAuthModalBtn: document.querySelector('[auth-modal-close]'),
-      authModal: document.querySelector('[auth-modal]'),
-    };
-  
-    refs.openAuthModalBtn.addEventListener('click', toggleModal);
-    refs.closeAuthModalBtn.addEventListener('click', toggleModal);
-  
-    function toggleModal() {
-      refs.authModal.classList.toggle('is-hidden');
-    }
-  })();
+  const refs = {
+    openAuthModalBtn: document.querySelector('[auth-modal-open]'),
+    closeAuthModalBtn: document.querySelector('[auth-modal-close]'),
+    authModal: document.querySelector('[auth-modal]'),
+  };
+
+  refs.openAuthModalBtn.addEventListener('click', toggleModal);
+  refs.closeAuthModalBtn.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    refs.authModal.classList.toggle('is-hidden');
+  }
+})();
 
 
 const email = document.querySelector("#email");
 const password = document.querySelector("#password")
 email.addEventListener("input", function (event) {
-  if (email.validity.typeMismatch) {
-    email.setCustomValidity("Введіть коректний e-mail!");
-  } else {
-    email.setCustomValidity("");
-  }
+if (email.validity.typeMismatch) {
+  email.setCustomValidity("Введіть коректний e-mail!");
+} else {
+  email.setCustomValidity("");
+}
 });
 
 // import axios from 'axios';
@@ -37,43 +37,46 @@ const urlAuthLogin = `${BASE_URL}/auth/login`;
 const urlAuthSignin = `${BASE_URL}/auth/register`;
 logInBtnRef.addEventListener('click', getAuthInputData)
 
-function getAuthInputData (event) {
-   const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
-   const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
-     acc.push(el.value)
-     return acc
-   },[])
-  
-  authInputData.email = arrValue[0]
-  authInputData.password = arrValue[1]
-  console.log(authInputData);
-
-const toFetchData = {
-  email: authInputData.email,
-  password: authInputData.password,
-};
-
+const urlAuthRegister = `${BASE_URL}/auth/login`;
+let authInputData ={};
 const option = {
   method: 'POST',
-  body: JSON.stringify(toFetchData),
+  body: JSON.stringify(authInputData),
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
   },
-};
+  };
 
-const myHeaders = new Headers();
+function getAuthInputData (event) {
+  
+ const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
+ const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
+   acc.push(el.value)
+   return acc
+ },[])
+//  event.preventDefault();
+authInputData.email = arrAuthInputValue[0]
+authInputData.password = arrAuthInputValue[1]
+console.log(authInputData);
 
-myHeaders.append('Content-Type', 'application/json');
-myHeaders.append(
-  'Authorization',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-);
+// const toFetchData = {
+// email: authInputData.email,
+// password: authInputData.password,
+// };
 
- // Log-in
+// const myHeaders = new Headers();
+
+// myHeaders.append('Content-Type', 'application/json');
+// myHeaders.append(
+// 'Authorization',
+// 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
+// );
+
+// Log-in
 
 fetch(urlAuthLogin, option)
- .then((r) => r.json())
- .then(console.log);
+.then((r) => r.json())
+.then(console.log);
 }
 
 
