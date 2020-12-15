@@ -26,95 +26,89 @@ email.addEventListener("input", function (event) {
 
 // import axios from 'axios';
 
-// logInButton.addEventListener('click', handleRegisterSubmit)
+// const BASE_URL = 'https://callboard-backend.herokuapp.com';
 
-import axios from 'axios';
+// const registerUser = userData => {
+//     const { email, password } = userData;
+//     return axios.post(`${BASE_URL}/auth/login`, {email, password});
+// }
+// // const logInButton = document.querySelector('.log-in')
+// const registerFormRef = document.querySelector('.auth-modal-form');
+// //const emailRef = document.querySelector('.email');
+// //const passwordRef = document.querySelector('.password');
+// const handleRegisterSubmit = event => {
+//     event.preventDefault();
+//     const { target: form } = event;
+//     // const { emailRef, passwordRef } = event;
+//     // const { currentTarget: form } = event.target;
+//     // const { registerFormRef } = event;
+//     const formData = new FormData(form);
+//     // const formData = new FormData(emailRef, passwordRef);
+//     const body = {}
 
-const BASE_URL = 'https://callboard-backend.herokuapp.com';
+//     formData.forEach((value, key)=> {
+//         body[key] = value;
+//     })
 
-const registerUser = userData => {
-    const { email, password } = userData;
-    return axios.post(`${BASE_URL}/auth/login`, {email, password});
-}
-// const logInButton = document.querySelector('.log-in')
-const registerFormRef = document.querySelector('.auth-modal-form');
-//const emailRef = document.querySelector('.email');
-//const passwordRef = document.querySelector('.password');
-const handleRegisterSubmit = event => {
-    event.preventDefault();
-    const { target: form } = event;
-    // const { emailRef, passwordRef } = event;
-    // const { currentTarget: form } = event.target;
-    // const { registerFormRef } = event;
-    const formData = new FormData(form);
-    // const formData = new FormData(emailRef, passwordRef);
-    const body = {}
+//     // )
+//     // registerUser(event)
+//     registerUser(body)
+//         .then(({data}) => console.log(data))
+//         // .then(({emailRef, passwordRef}) => console.log(emailRef, passwordRef))
+// }
 
-    formData.forEach((value, key)=> {
-        body[key] = value;
-    })
+// // logInButton.addEventListener('click', handleRegisterSubmit)
 
-    // )
-    // registerUser(event)
-    registerUser(body)
-        .then(({data}) => console.log(data))
-        // .then(({emailRef, passwordRef}) => console.log(emailRef, passwordRef))
-}
+// const registerFormRef = document.querySelector('.auth-modal-form');
+// // console.log(registerFormRef)
+// const handleRegisterSubmit = event => {
+//     event.preventDefault();
 
-// logInButton.addEventListener('click', handleRegisterSubmit)
-registerFormRef.addEventListener('submit', handleRegisterSubmit)
+//     const { currentTarget: form } = event;
+//     const formData = new FormData(form);
+//     const body = {}
 
-const registerFormRef = document.querySelector('.auth-modal-form');
-// console.log(registerFormRef)
-const handleRegisterSubmit = event => {
-    event.preventDefault();
+//     formData.forEach((value, key)=> {
+//         body[key] = value;
+//     })
+//     console.log(body)
+//     // console.log(formData);
+//     // formData.forEach((value, key) => {
+//     //     console.log(key.value);
+//     // })    
+//     registerUser(body)
+//         .then(result => console.log(result))
+// }
 
-    const { currentTarget: form } = event;
-    const formData = new FormData(form);
-    const body = {}
+// // registerFormRef.addEventListener('submit', handleRegisterSubmit)
 
+// const BASE_URL = 'https://callboard-backend.herokuapp.com';
 
-    formData.forEach((value, key)=> {
-        body[key] = value;
-    })
-    console.log(body)
-    // console.log(formData);
-    // formData.forEach((value, key) => {
-    //     console.log(key.value);
-    // })    
-    registerUser(body)
-        .then(result => console.log(result))
-}
+// const postToAdd = {
+//     email: 'user5468878994545@example.com',
+//     password: 'qwerty123',
+//   };
 
-// registerFormRef.addEventListener('submit', handleRegisterSubmit)
+//  const option = {
+//    method: 'POST',
+//    body: JSON.stringify(postToAdd),
+//    headers: {
+//      'Content-Type': 'application/json; charset=UTF-8',
+//    },
+//  };
 
-const BASE_URL = 'https://callboard-backend.herokuapp.com';
+//  const myHeaders = new Headers();
 
-const postToAdd = {
-    email: 'user5468878994545@example.com',
-    password: 'qwerty123',
-  };
+// myHeaders.append('Content-Type', 'application/json');
+// myHeaders.append(
+//   'Authorization',
+//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
+// );
 
- const option = {
-   method: 'POST',
-   body: JSON.stringify(postToAdd),
-   headers: {
-     'Content-Type': 'application/json; charset=UTF-8',
-   },
- };
+// const urlAuthRegister = `${BASE_URL}/auth/login`;
 
- const myHeaders = new Headers();
-
-myHeaders.append('Content-Type', 'application/json');
-myHeaders.append(
-  'Authorization',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-);
-
-const urlAuthRegister = `${BASE_URL}/auth/login`;
-
- // Регистрация 
-fetch(urlAuthRegister, option)
- .then((r) => r.json())
- .then(console.log);
+//  // Регистрация 
+// fetch(urlAuthRegister, option)
+//  .then((r) => r.json())
+//  .then(console.log);
 
