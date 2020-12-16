@@ -35,7 +35,7 @@ const registerFormRef = document.querySelector('.auth-modal-form');
 
 const urlAuthLogin = `${BASE_URL}/auth/login`;
 const urlAuthSignin = `${BASE_URL}/auth/register`;
-logInBtnRef.addEventListener('click', getAuthInputData)
+
 
 const urlAuthRegister = `${BASE_URL}/auth/login`;
 let authInputData ={};
@@ -48,25 +48,29 @@ const option = {
   // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
     },
   };
+  logInBtnRef.addEventListener('click', getAuthInputData)
 
 function getAuthInputData (event) {
-  
+  event.preventDefault();
+
  const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
 //  console.log('.auth-modal-input');
  const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
    acc.push(el.value)
    return acc
  },[])
-//  event.preventDefault();
+
 authInputData.email = arrAuthInputValue[0]
 authInputData.password = arrAuthInputValue[1]
-
+console.log(authInputData);
 // Log-in
-
+// function loginUser(){
+//   return
+// }
 fetch(urlAuthLogin, option)
 
 .then(r => r.json())
-.then(post => console.log(post))
+.then(data => console.log(data))
 // .then(post => console.log(post))
 // .catch(error => console.log('ERROR' + error));
 }
