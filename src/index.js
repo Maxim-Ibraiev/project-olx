@@ -9,16 +9,19 @@ import fullscreen from './images/fullscreen.png';
 import heart from './images/heart.png';
 import heartfill from './images/heartfill.png';
 // import './js/cardAddToFavorites'
-import './componentsJS/addModal';
+import './componentsJS/add-modal-logic/add-modal-open';
+import './componentsJS/add-modal-logic/add-modal-close';
+import './componentsJS/add-modal-logic/add-modal-upload-file';
+import './componentsJS/add-modal-logic/add-modal-send';
+import './componentsJS/add-modal-logic/add-modal-validation';
 import './componentsJS/myCalls';
 import './componentsJS/searchModal';
 // import './componentsJS/prodCard';
-import './js/myCalls'
-import './js/authModal'
+import './js/myCalls';
+import './js/authModal';
 // import './js/exampleBackend'
 import './js/sliderMurkup';
 import './js/slickSlider';
 import './js/menu';
 import './js/categories';
 // import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
-
