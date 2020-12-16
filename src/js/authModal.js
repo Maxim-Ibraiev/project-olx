@@ -44,12 +44,15 @@ const option = {
   body: JSON.stringify(authInputData),
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
-  },
+  //   'Authorization':
+  // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
+    },
   };
 
 function getAuthInputData (event) {
   
  const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
+//  console.log('.auth-modal-input');
  const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
    acc.push(el.value)
    return acc
@@ -57,7 +60,18 @@ function getAuthInputData (event) {
 //  event.preventDefault();
 authInputData.email = arrAuthInputValue[0]
 authInputData.password = arrAuthInputValue[1]
-console.log(authInputData);
+
+// Log-in
+
+fetch(urlAuthLogin, option)
+
+.then(r => r.json())
+.then(post => console.log(post))
+// .then(post => console.log(post))
+// .catch(error => console.log('ERROR' + error));
+}
+
+// console.log(authInputData);
 
 // const toFetchData = {
 // email: authInputData.email,
@@ -71,13 +85,6 @@ console.log(authInputData);
 // 'Authorization',
 // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
 // );
-
-// Log-in
-
-fetch(urlAuthLogin, option)
-.then((r) => r.json())
-.then(console.log);
-}
 
 
 
