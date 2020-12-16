@@ -4,7 +4,7 @@ function openAndCloseMenu() {
   const refs = {
     openModalBtn: document.querySelector('[data-menu-open]'),
     closeModalBtn: document.querySelector('[data-menu-close]'),
-    modal: document.querySelector('[data-backdrop]'),
+    modal: document.querySelector('[header-backdrop]'),
   };
 
   refs.openModalBtn.addEventListener('click', onClickOpenModal);
