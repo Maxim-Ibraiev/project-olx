@@ -18,7 +18,7 @@ function isModalOpen(evt) {
   document.body.classList.add('is-open');
   // window.addEventListener('keydown', onKeyLeafDown);
 }
-
+//////========тест
 function isModalClose() {
   // if (evt.target.nodeName == 'FORM') {
   //   return;
