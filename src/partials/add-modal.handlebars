@@ -129,20 +129,20 @@
           <button
             type="button"
             class="add-modal__close-btn"
-            data-close="true"
+            data-action="close-modal"
           ></button>
 
           <h2 class="add-modal__form--title">Додати оголошення</h2>
 
-          <form class="add-modal__form" name="addForm">
+          <form action="#" class="add-modal__form js-add-form" name="addForm">
             <div>
               <div class="input-wrapper">
                 <p class="add-modal__product-name-title">Назва товару</p>
                 <input
                   type="text"
-                  name="productName"
-                  class="add-modal__product-name input"
-                  id=""
+                  name="product-name"
+                  class="add-modal__product-name _req _name input"
+                  id="form-name"
                   data-source="name"
                   autocomplete="off"
                   placeholder=""
@@ -154,10 +154,12 @@
 
               <div class="input-wrapper">
                 <p class="add-modal__product-photos-title">Фото</p>
-                <ul class="add-modal__product-photos">
+                <ul class="add-modal__product-photos _req">
                   <li class="add-modal__product-photos-item">
                     <input
-                      class="photo-input"
+                    accept=".jpg"
+                    type="file"
+                      class="photo-input add-image"
                       data-id="1"
                       data-active="true"
                       name=""
@@ -276,9 +278,9 @@
               <div class="input-wrapper">
                 <p class="add-modal__product-description-title">Опис товару</p>
                 <textarea
-                  name="productDescription"
+                  name="product-description"
                   data-source="description"
-                  class="add-modal__product-description input"
+                  class="add-modal__product-description _description _req input"
                   id=""
                   placeholder=""
                 ></textarea>
@@ -291,8 +293,8 @@
                 <p class="add-modal__product-select-title">Категорія товару</p>
                 <div class="select">
                   <select
-                    name="productCategory"
-                    class="add-modal__product-select input"
+                    name="product-category"
+                    class="add-modal__product-select _category _req input"
                     id=""
                   >
                     <option
@@ -306,14 +308,16 @@
                     <option value="transport" class="select-option">
                       Транспорт
                     </option>
-                    <option value="work" class="select-option">Работа</option>
+                    <option value="work" class="select-option">
+                      Работа
+                    </option>
                     <option value="electronics" class="select-option">
                       Электроніка
                     </option>
-                    <option value="business-and-services" class="select-option">
+                    <option value="business and services" class="select-option">
                       Бізнес та послуги
                     </option>
-                    <option value="recreation-and-sports" class="select-option">
+                    <option value="recreation and sports" class="select-option">
                       Відпочинок та спорт
                     </option>
                     <option value="free" class="select-option">
@@ -332,9 +336,10 @@
                 <p class="add-modal__product-price-title">Ціна</p>
                 <input
                   type="text"
-                  name="productPrice"
+                  id="form-price"
+                  name="product-price"
                   data-source="price"
-                  class="add-modal__product-price input"
+                  class="add-modal__product-price _price _req input"
                   autocomplete="off"
                   placeholder="0.00 грн"
                 /> --}}
@@ -349,11 +354,11 @@
               <div class="input-wrapper">
                 <p class="add-modal__product-telephone-number-title">Телефон</p>
                 <input
+                id="form-phone"
                   type="tel"
-                  name="productPhone"
+                  name="product-phone"
                   data-source="phone"
-                  class="add-modal__product-telephone-number input"
-                  id=""
+                  class="add-modal__product-telephone-number _phone _req input"
                   placeholder="+38 (0--) --- -- --"
                 /> --}}
                 {{!-- <div class="add-form__error-message">Введіть коректний номер телефону!</div> --}}

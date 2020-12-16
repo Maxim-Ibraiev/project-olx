@@ -27,12 +27,6 @@ const optionAdd = {
 }
 fetch(urlAdd, optionAdd).then(r => r.json()).then(console.log)
 */
-refs.myCallClose.addEventListener('click', onModalClose);
-
-function onModalClose(event) {
-  event.preventDefault()
-  console.log('click');
-}
 
 const currentProd = {
   imageUrls: [

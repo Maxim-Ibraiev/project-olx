@@ -1,7 +1,6 @@
-<div class="auth-backdrop is-hidden" auth-modal>
-  <div class="container auth">
+<div class="container auth">
     <div class= "auth-modal">
-        <button class="auth-modal-close" auth-modal-close>
+        <button class="auth-modal-close">
             <svg width="24px"
                  height="24px">
                 <use
@@ -29,22 +28,18 @@
          Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:
       </h3>
       <form class="auth-modal-form" action="">
-       <input class="auth-modal-input email" type="email" name="email" id="email" placeholder = "E-mail" required>
-       <label for="email" class="auth-input-label"></label>
-       <input class="auth-modal-input password" type="password" name="password" id="password" placeholder = "Password" required > <!--pattern = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$" title="Мінімум 6 символів, серед яких лише латинські букви [A-z] та цифри [0-9]"-->
-       <label for="password" class="auth-input-label"></label>
-      <button class="auth-modal-button log-in">
-        <span class="log-in-text">
+       <input class="auth-modal-input email" type="text" name="mail" id="mail" placeholder="E-mail">
+       <input class="auth-modal-input password" type="text" name="password" id="password" placeholder="Password">
+      <button class="auth-modal-button sign-in">
+        <span class="sign-in-text">
           Увійти
         </span>    
       </button>
-      <button class="auth-modal-button sign-in">
-        <span class="sign-in-text">
+      <button class="auth-modal-button log-in">
+        <span class="log-in-text">
         Зареєструватись
       </span>
       </button>
       </form> 
     </div>
   </div>
-</div>
-

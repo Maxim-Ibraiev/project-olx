@@ -196,7 +196,7 @@
   }
 }
 
-.header-backdrop.is-open {
+.backdrop.is-open {
   @media screen and (max-width: 1279px) {
     opacity: 1;
     pointer-events: auto;

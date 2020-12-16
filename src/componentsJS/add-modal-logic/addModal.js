@@ -242,4 +242,3 @@ function addFormValidate(form) {
 function phoneValidate(element) {
   return !/^\+380\d{3}\d{2}\d{2}\d{2}$/.test(element.value);
 }
-
