@@ -1,7 +1,7 @@
-<header class="header-container container">
+<header class="header-container">
 
     <div class="header__mobile-container">
-        <button class="search-button" data-search-open>
+        <button class="search-button" data-modal="search">
             <svg class="icon" width="24" height="24">
                 <use href="/src/images/symbol-defs.svg#icon-search"></use>
             </svg>
@@ -17,7 +17,7 @@
         </button>
 
         <div class="header__button-container">
-            <button type="button" class="header__button authorization" data-modal-open>
+            <button type="button" class="header__button authorization" auth-modal-open>
                 <span class="button__text">Реєстрація / Увійти</span>
                 <svg class="icon__account" width="24" height="24">
                     <use class="" href="/src/images/symbol-defs.svg#icon-user-profile"></use>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="filter__container">
-        <div class="backdrop" data-backdrop>
+        <div class="header-backdrop" data-backdrop>
             <div class="mobile__menu-container is-open">
 
                 <button type="button" class="menu-button close" aria-label="Переключатель мобильного меню"
@@ -42,8 +42,8 @@
                 <ul class="filter__inner">
 
                     <li class="user__button-mobile">
-                        <button type="button" class="user__button mobile" data-modal-open>Реєстрація /
-                            Увійти</button>
+                        {{!-- <button type="button" class="user__button mobile" data-modal-open>Реєстрація /
+                            Увійти</button> --}}
                     </li>
 
                     <li class="filter__item">
