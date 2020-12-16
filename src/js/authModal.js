@@ -33,6 +33,7 @@ const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
 logInBtnRef.addEventListener('click', getAuthInputDataToLogin)
 signInBtnRef.addEventListener('click', getAuthInputDataToSignin)
 
+  // Log-in
 function getAuthInputDataToLogin (event) {
   event.preventDefault();
  const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
@@ -44,8 +45,6 @@ function getAuthInputDataToLogin (event) {
   authInputData.email = arrAuthInputValue[0]
   authInputData.password = arrAuthInputValue[1]
   console.log(authInputData);
-
-  // Log-in
 
 fetchLogInData(authInputData);
 
@@ -63,8 +62,7 @@ fetchLogInData(authInputData);
       .then(data =>console.log(data));
   }
 }
-
-// getAuthInputDataToSignin
+  // Registration
 function getAuthInputDataToSignin (event) {
   event.preventDefault();
  const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
@@ -76,8 +74,6 @@ function getAuthInputDataToSignin (event) {
   authInputData.email = arrAuthInputValue[0]
   authInputData.password = arrAuthInputValue[1]
   console.log(authInputData);
- 
-  // Registration
  
   fetchSignInData(authInputData);
  
