@@ -1,6 +1,7 @@
 import ApiService from './apiService';
 const apiService = new ApiService();
 import productModalCard from '../partials/productCardModal.handlebars';
+import userInfoTemplate from '../partials/owner-info.handlebars';
 import refs from '../js/refs';
 import $ from '../../node_modules/jquery/dist/jquery';
 import slick from '../js/slick';
@@ -9,31 +10,46 @@ import slick from '../js/slick';
 refs.closeBtn.addEventListener('click', onModalClose);
 function onModalClose(event) {
 	event.preventDefault();
-	refs.productModal.classList.add('isClosed')
+	refs.productModal.classList.add('isClosed');
+	refs.productBackdrop.classList.add('isHidden');
 }
 
 apiService.fetchProductData().then(data => {
-	const product = data[2];
-	
-	const ownerId = product.userId;
+	const product = data[4];
 	const productId = product._id;
-	
-	// apiService.fetchUderData(ownerId).then(data => {
-	// 	console.log(data);
-	// })
+	console.log(productId);
+
+	apiService.userId = product.userId;	
+	apiService.fetchUserData().then(data => {
+		onRenderUserInfo(data);
+	})
+
 	onRenderProductCard(product);
 	
 	onOwnerInfoBtnToggle();
 
 	onSlidesToggle();
-
-	onFavouritesPush(productId);
+	
+	const favouritesBtn = document.querySelector('.js-favourites');
+	favouritesBtn.addEventListener('click', postProductToFavourites);
 	
 })
+
+function postProductToFavourites() {
+		apiService.postToFavourites().then(data => {
+	 console.log(data);
+	})
+	}
 
 function onRenderProductCard(product) {
 	const markup = productModalCard(product);
 	refs.productContainer.insertAdjacentHTML('beforeend', markup);
+}
+
+function onRenderUserInfo(data) {
+	const markup = userInfoTemplate(data);
+	const ownerInfo = document.querySelector('.js-owner-info');
+	ownerInfo.insertAdjacentHTML('afterbegin', markup);
 }
 
 function onOwnerInfoBtnToggle() {
@@ -46,11 +62,11 @@ function onOwnerInfoBtnToggle() {
   }
 }
 
-function onFavouritesPush(productId) {
-	apiService.postToFavourites().then(data => {
-	 console.log(data);
-	})
-}
+// function onFavouritesPush() {
+// 	apiService.postToFavourites().then(data => {
+// 	 console.log(data);
+// 	})
+// }
 
 function onSlidesToggle() {
 	
