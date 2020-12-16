@@ -15,25 +15,26 @@ function onModalClose(event) {
 }
 
 apiService.fetchProductData().then(data => {
-	const product = data[4];
-	const productId = product._id;
-	console.log(productId);
-
-	apiService.userId = product.userId;	
-	apiService.fetchUserData().then(data => {
-		onRenderUserInfo(data);
-	})
-
+	const product = data[7];
+	
+	onFetchUserInfo(product);
+	
 	onRenderProductCard(product);
 	
 	onOwnerInfoBtnToggle();
 
 	onSlidesToggle();
-	
-	const favouritesBtn = document.querySelector('.js-favourites');
-	favouritesBtn.addEventListener('click', postProductToFavourites);
-	
+
+	onFavouritesPush();	
 })
+
+function onFetchUserInfo(product) {
+	apiService.userId = product.userId;	
+	apiService.fetchUserData().then(data => {
+		onRenderUserInfo(data);
+	})
+}
+	
 
 function postProductToFavourites() {
 		apiService.postToFavourites().then(data => {
@@ -60,6 +61,11 @@ function onOwnerInfoBtnToggle() {
 	  event.preventDefault();
 		ownerInfo.classList.add('isShown');
   }
+}
+
+function onFavouritesPush() {
+	const favouritesBtn = document.querySelector('.js-favourites');
+	favouritesBtn.addEventListener('click', postProductToFavourites);
 }
 
 // function onFavouritesPush() {

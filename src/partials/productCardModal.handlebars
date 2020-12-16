@@ -12,14 +12,18 @@
 </div>
 <div class="product-info">
 	<h3 class="product-name">{{title}}</h3>
-	<p class="product-code">Код товару | 105-С</p>
-	<div class="slider-mobile">
-		{{#each this.imageUrls}}
-		<div class="image-wrapper">
-			<img class="main-photo" src={{this}} alt={{title}}>
+	<p class="product-code">Код товару | {{_id}}</p>
+
+	<div class="mobile-slider">
+		<div class="slider-mobile">
+			{{#each this.imageUrls}}
+			<div class="image-wrapper">
+				<img class="main-photo" src={{this}} alt={{title}}>
+			</div>
+			{{/each}}
 		</div>
-		{{/each}}
 	</div>
+
 	<div class="product-price">{{price}} грн</div>
 
 	<div class="product-owner js-product-owner">

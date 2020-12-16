@@ -4,7 +4,7 @@ export default class ApiService {
 	}
 
 	fetchProductData() {
-		const url = 'https://callboard-backend.herokuapp.com/call/specific/work';
+		const url = 'https://callboard-backend.herokuapp.com/call/specific/business and services';
 		return fetch(url)
 			.then(response => response.json());
 	}
