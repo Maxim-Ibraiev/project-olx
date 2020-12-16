@@ -13,7 +13,6 @@
   }
 })();
 
-
 const email = document.querySelector("#email");
 const password = document.querySelector("#password")
 email.addEventListener("input", function (event) {
@@ -24,128 +23,75 @@ if (email.validity.typeMismatch) {
 }
 });
 
-// import axios from 'axios';
-
 const BASE_URL = 'https://callboard-backend.herokuapp.com';
 
 const logInBtnRef = document.querySelector('.log-in');
 const signInBtnRef = document.querySelector('.sign-in');
-// const authModalInputRef = document.querySelectorAll('.auth-modal-input');
 const registerFormRef = document.querySelector('.auth-modal-form');
+const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
 
-const urlAuthLogin = `${BASE_URL}/auth/login`;
-const urlAuthSignin = `${BASE_URL}/auth/register`;
+logInBtnRef.addEventListener('click', getAuthInputDataToLogin)
+signInBtnRef.addEventListener('click', getAuthInputDataToSignin)
 
-
-const urlAuthRegister = `${BASE_URL}/auth/login`;
-let authInputData ={};
-const option = {
-  method: 'POST',
-  body: JSON.stringify(authInputData),
-  headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-  //   'Authorization':
-  // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-    },
-  };
-  logInBtnRef.addEventListener('click', getAuthInputData)
-
-function getAuthInputData (event) {
+function getAuthInputDataToLogin (event) {
   event.preventDefault();
-
- const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
-//  console.log('.auth-modal-input');
  const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
    acc.push(el.value)
    return acc
  },[])
 
-authInputData.email = arrAuthInputValue[0]
-authInputData.password = arrAuthInputValue[1]
-console.log(authInputData);
-// Log-in
-// function loginUser(){
-//   return
-// }
-fetch(urlAuthLogin, option)
+  let authInputData ={};
+  authInputData.email = arrAuthInputValue[0]
+  authInputData.password = arrAuthInputValue[1]
+  console.log(authInputData);
 
-.then(r => r.json())
-.then(data => console.log(data))
-// .then(post => console.log(post))
-// .catch(error => console.log('ERROR' + error));
+  // Log-in
+
+fetchLogInData(authInputData);
+
+  function fetchLogInData(body){
+    const urlAuthLogin = `${BASE_URL}/auth/login`;
+    const option = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        },
+    };
+      fetch(urlAuthLogin, option)
+      .then(r => r.json())
+      .then(data =>console.log(data));
+  }
 }
 
-// console.log(authInputData);
+// getAuthInputDataToSignin
+function getAuthInputDataToSignin (event) {
+  event.preventDefault();
+ const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
+   acc.push(el.value)
+   return acc
+ },[])
 
-// const toFetchData = {
-// email: authInputData.email,
-// password: authInputData.password,
-// };
-
-// const myHeaders = new Headers();
-
-// myHeaders.append('Content-Type', 'application/json');
-// myHeaders.append(
-// 'Authorization',
-// 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-// );
-
-
-
-
-
-// const registerUser = userData => {
-//     const { email, password } = userData;
-//     return axios.post(`${BASE_URL}/auth/login`, {email, password});
-// }
-// // const logInButton = document.querySelector('.log-in')
-// const registerFormRef = document.querySelector('.auth-modal-form');
-// //const emailRef = document.querySelector('.email');
-// //const passwordRef = document.querySelector('.password');
-// const handleRegisterSubmit = event => {
-//     event.preventDefault();
-//     const { target: form } = event;
-//     // const { emailRef, passwordRef } = event;
-//     // const { currentTarget: form } = event.target;
-//     // const { registerFormRef } = event;
-//     const formData = new FormData(form);
-//     // const formData = new FormData(emailRef, passwordRef);
-//     const body = {}
-
-//     formData.forEach((value, key)=> {
-//         body[key] = value;
-//     })
-
-//     // )
-//     // registerUser(event)
-//     registerUser(body)
-//         .then(({data}) => console.log(data))
-//         // .then(({emailRef, passwordRef}) => console.log(emailRef, passwordRef))
-// }
-
-// // logInButton.addEventListener('click', handleRegisterSubmit)
-
-// const registerFormRef = document.querySelector('.auth-modal-form');
-// // console.log(registerFormRef)
-// const handleRegisterSubmit = event => {
-//     event.preventDefault();
-
-//     const { currentTarget: form } = event;
-//     const formData = new FormData(form);
-//     const body = {}
-
-//     formData.forEach((value, key)=> {
-//         body[key] = value;
-//     })
-//     console.log(body)
-//     // console.log(formData);
-//     // formData.forEach((value, key) => {
-//     //     console.log(key.value);
-//     // })    
-//     registerUser(body)
-//         .then(result => console.log(result))
-// }
-
-// // registerFormRef.addEventListener('submit', handleRegisterSubmit)
-
-
+  let authInputData ={};
+  authInputData.email = arrAuthInputValue[0]
+  authInputData.password = arrAuthInputValue[1]
+  console.log(authInputData);
+ 
+  // Registration
+ 
+  fetchSignInData(authInputData);
+ 
+  function fetchSignInData(body){
+    const urlAuthSignIn = `${BASE_URL}/auth/register`;
+    const option = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        },
+      };
+      fetch(urlAuthSignIn, option)
+      .then(r => r.json())
+      .then(data =>console.log(data));
+  }
+}
