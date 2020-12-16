@@ -1,0 +1,142 @@
+.search-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
+
+.search-modal.is-open,
+.error-message.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.search-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.search-modal-content {
+  padding: 93px 105px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $accent;
+  width: 290px;
+  transform: scale(0.95);
+  transition: transform var(--animation-duration) var(--timing-function);
+
+  @media (min-width: 768px) {
+    width: 650px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 860px;
+  }
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+.search-modal-input {
+  width: 252px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+  line-height: 2;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+
+  @media (min-width: 768px) {
+    width: 550px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 650px;
+  }
+}
+
+.search-modal-input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-modal-button-search {
+  position: absolute;
+  right: 16%;
+  top: 45%;
+  margin: 0px;
+  padding: 0px;
+
+  outline: none;
+  border: none;
+
+  background: transparent;
+
+  @media (min-width: 768px) {
+    right: 19.5%;
+  }
+
+  @media (min-width: 1280px) {
+    right: 14.5%;
+  }
+}
+
+.search-modal-button-icon-search {
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
+
+.search-modal-button-close {
+  position: absolute;
+  right: 40px;
+  top: 25px;
+  outline: none;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    right: 50px;
+  }
+
+  @media (min-width: 1280px) {
+    right: 50px;
+  }
+}
+
+.search-modal-button-icon-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
+
+.error-message {
+  position: absolute;
+  left: 14%;
+  top: 60%;
+  color: white;
+  opacity: 0;
+}

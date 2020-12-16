@@ -1,9 +1,9 @@
-<header class="header-container container">
+<header class="header-container">
 
     <div class="header__mobile-container">
-        <button class="search-button" data-search-open>
+        <button class="search-button" data-modal="search">
             <svg class="icon" width="24" height="24">
-                <use href="./images/symbol-defs.svg#icon-search"></use>
+                <use href="/src/images/symbol-defs.svg#icon-search"></use>
             </svg>
         </button>
 
@@ -12,38 +12,38 @@
         <button type="button" class="menu-button open" aria-label="Переключатель мобильного меню" aria-expanded="false"
             data-menu-open>
             <svg class="icon" width="24" height="24">
-                <use class="icon-menu" href="./images/symbol-defs.svg#icon-menu"></use>
+                <use class="icon-menu" href="/src/images/symbol-defs.svg#icon-menu"></use>
             </svg>
         </button>
 
         <div class="header__button-container">
-            <button type="button" class="header__button authorization" data-modal-open>
+            <button type="button" class="header__button authorization" auth-modal-open>
                 <span class="button__text">Реєстрація / Увійти</span>
                 <svg class="icon__account" width="24" height="24">
-                    <use class="" href="./images/symbol-defs.svg#icon-user-profile"></use>
+                    <use class="" href="/src/images/symbol-defs.svg#icon-user-profile"></use>
                 </svg>
             </button>
-            <button data-create-ad-modal-open type="button" class="header__create-add-btn modal-btn">Створити
+            <button data-create-ad-modal-open type="button" class="header__create-add-btn modal-btn" data-action="open-modal">Створити
                 оголошення!</button>
         </div>
     </div>
 
     <div class="filter__container">
-        <div class="backdrop" data-backdrop>
+        <div class="header-backdrop" data-backdrop>
             <div class="mobile__menu-container is-open">
 
                 <button type="button" class="menu-button close" aria-label="Переключатель мобильного меню"
                     aria-expanded="false" data-menu-close>
                     <svg class="icon" width="24" height="24">
-                        <use class="icon-close" href="./images/symbol-defs.svg#icon-close"></use>
+                        <use class="icon-close" href="/src/images/symbol-defs.svg#icon-close"></use>
                     </svg>
                 </button>
 
                 <ul class="filter__inner">
 
                     <li class="user__button-mobile">
-                        <button type="button" class="user__button mobile" data-modal-open>Реєстрація /
-                            Увійти</button>
+                        {{!-- <button type="button" class="user__button mobile" data-modal-open>Реєстрація /
+                            Увійти</button> --}}
                     </li>
 
                     <li class="filter__item">
