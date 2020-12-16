@@ -15,8 +15,13 @@ import './componentsJS/add-modal-logic/add-modal-upload-file';
 import './componentsJS/add-modal-logic/add-modal-send';
 import './componentsJS/add-modal-logic/add-modal-validation';
 import './componentsJS/myCalls';
+import './componentsJS/searchModal';
 // import './componentsJS/prodCard';
-
+import './js/myCalls'
+import './js/authModal'
 // import './js/exampleBackend'
+import './js/sliderMurkup';
+import './js/slickSlider';
+import './js/menu'
+// import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
 
-import './js/menu';
