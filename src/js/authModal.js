@@ -3,14 +3,38 @@
     openAuthModalBtn: document.querySelector('[auth-modal-open]'),
     closeAuthModalBtn: document.querySelector('[auth-modal-close]'),
     authModal: document.querySelector('[auth-modal]'),
+    authBackdrop: document.querySelector('.auth-backdrop'),
+    // authContainer: document.querySelector('.auth-container'),
+
   };
 
+  refs.authBackdrop.addEventListener('click', closeAuthModalByClickToBackdrop);
   refs.openAuthModalBtn.addEventListener('click', toggleModal);
   refs.closeAuthModalBtn.addEventListener('click', toggleModal);
+
+  // refs.authBackdrop.addEventListener('click', closeModal);
+
+  function closeModal(){
+    refs.authModal.classList.add('is-hidden');
+  }
+
+  window.addEventListener('keydown', closeModalbyEsc)
+    function closeModalbyEsc (evt){
+  if (evt.code === "Escape"){
+  closeModal()
+  }
+ }
 
   function toggleModal() {
     refs.authModal.classList.toggle('is-hidden');
   }
+
+  function closeAuthModalByClickToBackdrop(evt){
+    if(evt.target === evt.currentTarget){
+      closeModal()
+    }
+  }
+  
 })();
 
 const email = document.querySelector("#email");
@@ -25,6 +49,7 @@ if (email.validity.typeMismatch) {
 
 const BASE_URL = 'https://callboard-backend.herokuapp.com';
 
+const sigmInByGoogle = document.querySelector('.auth-modal-button-google');
 const logInBtnRef = document.querySelector('.log-in');
 const signInBtnRef = document.querySelector('.sign-in');
 const registerFormRef = document.querySelector('.auth-modal-form');
@@ -91,3 +116,36 @@ function getAuthInputDataToSignin (event) {
       .then(data =>console.log(data));
   }
 }
+
+function googleSignIn (event) {
+  const urlAuthSignInGoogle = `${BASE_URL}/auth/google`;
+
+  event.preventDefault();
+//  const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
+//    acc.push(el.value)
+//    return acc
+//  },[])
+
+  // let authInputData ={};
+  // authInputData.email = arrAuthInputValue[0]
+  // authInputData.password = arrAuthInputValue[1]
+  // console.log(authInputData);
+ 
+  fetchSignInByGoogle();
+ 
+  function fetchSignInByGoogle(){
+    const urlAuthSignInGoogle = `${BASE_URL}/auth/google`;        
+    const option = {
+      method: 'GET',
+      // body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        },
+      };
+      fetch(urlAuthSignInGoogle, option)
+      .then(r => r.json())
+      .then(data =>console.log(data));
+  }
+}
+
+
