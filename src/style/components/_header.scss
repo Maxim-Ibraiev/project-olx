@@ -180,7 +180,7 @@
   }
 }
 
-.backdrop {
+.header-backdrop {
   @media screen and (max-width: 1279px) {
     position: fixed;
     top: 0px;
@@ -221,7 +221,7 @@
   }
 }
 
-.backdrop.is-open .mobile__menu-container {
+.header-backdrop.is-open .mobile__menu-container {
   @media screen and (max-width: 1279px) {
     left: 0;
 
