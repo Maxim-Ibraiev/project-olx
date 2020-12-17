@@ -40,15 +40,19 @@ const rendCategory = {
   free: document.querySelector('.free'),
   trade: document.querySelector('.trade'),
 };
-propertyFn();
-transportFn();
-workFn();
-electronicsFn();
-businessFn();
-recreationFn();
-recreationFn();
-freeFn();
-tradeFn();
+rendMainPage();
+
+function rendMainPage() {
+  propertyFn();
+  transportFn();
+  workFn();
+  electronicsFn();
+  businessFn();
+  recreationFn();
+  recreationFn();
+  freeFn();
+  tradeFn();
+}
 
 function propertyFn() {
   clearContainer();
@@ -134,14 +138,18 @@ function appendCategory(data) {
 function clearContainer() {
   categoryRend.innerHTML = '';
 }
-// Вопросы к ментору
-// 1 Как искать по названию
-// 2 Как вызвать категории "бизнес и услуги" и  "отдых и спорт"
+
 // Как отфильтровать товары по свойству isOnSale
-// Как освежить ветку если у меня
 
 // Задачи на 14 декабря
 // 1. Сделать поиск +
 // 2. Сделать секции на одной странице +
 // 3. Сделать категорию на одной странице
 // 4. Запушить все правильно и проверить
+
+// задачи на 15 декабря
+// Очистить фильтр на главную
+// Сделать кнопку
+// Смена сердца
+// сделать скидочную секцию
+// смена картинки при не правильной загрузге

@@ -1,3 +1,7 @@
+.is-hidden {
+  display: none;
+}
+
 .category-container {
   position: relative;
   background-color: #f5f6fb;
@@ -106,12 +110,24 @@
   right: 15px;
   z-index: 1;
   padding: 0;
-  border: none;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
   background-color: transparent;
   width: 20px;
   height: 20px;
   cursor: pointer;
   pointer-events: none;
+  overflow: hidden;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.favorite:focus {
+  outline: none;
 }
 
 .full-screen {
@@ -126,6 +142,12 @@
   height: 20px;
   cursor: pointer;
   pointer-events: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.full-screen:focus {
+  outline: none;
 }
 
 .favorite-icon,
@@ -225,9 +247,9 @@
 
 .swipe-right,
 .swipe-left {
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   border: 0;
   padding: 0;
   overflow: hidden;

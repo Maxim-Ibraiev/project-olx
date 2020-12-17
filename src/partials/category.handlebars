@@ -1,26 +1,35 @@
-<button class="btn-category-property">Нерухомість</button>
-<button class="btn-category-transport">Транспорт</button>
-<button class="btn-category-work">Робота</button>
-<button class="btn-category-electronics">Електроніка</button>
-<button class="btn-category-business">Бізнес та послуги</button>
-<button class="btn-category-recreation">Відпочинок і спорт</button>
-<button class="btn-category-free">Віддам безкоштовно</button>
-<button class="btn-category-trade">Обмін</button>
+<nav>
+    <ul>
+        <li><button data-f="property-filter" class="btn-category-property">Нерухомість</button></li>
+        <li><button data-f="transport-filter" class="btn-category-transport">Транспорт</button></li>
+        <li><button data-f="work-filter" class="btn-category-work">Робота</button></li>
+        <li><button data-f="electronics-filter" class="btn-category-electronics">Електроніка</button></li>
+        <li><button data-f="business-filter" class="btn-category-business">Бізнес та послуги</button></li>
+        <li><button data-f="recreation-filter" class="btn-category-recreation">Відпочинок і спорт</button></li>
+        <li><button data-f="free-filter" class="btn-category-free">Віддам безкоштовно</button></li>
+        <li><button data-f="trade-filter" class="btn-category-trade">Обмін</button></li>
+        <li><button data-f="clear" class="clear-filter">Очистить фильтр</button></li>
+    </ul>
+</nav>
+
+
+
 <form class="search-form">
     <input type="text" name="query" />
 </form>
 <button class="load-more">Загрузить еще</button>
 
-<section class="section">
+
+<section class="section ">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -31,16 +40,16 @@
         <ul class="flex-category category-rend"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section property-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -51,16 +60,16 @@
         <ul class="flex-category property"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section transport-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -71,16 +80,16 @@
         <ul class="flex-category transport"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section work-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -91,16 +100,16 @@
         <ul class="flex-category work"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section electronics-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -111,16 +120,16 @@
         <ul class="flex-category electronics"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section business-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -131,16 +140,16 @@
         <ul class="flex-category business"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section recreation-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -151,16 +160,16 @@
         <ul class="flex-category recreation"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section free-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
@@ -171,16 +180,16 @@
         <ul class="flex-category free"></ul>
     </div>
 </section>
-<section class="section">
+<section class="section trade-filter">
     <div class="category-container">
         <button type="button" class="swipe-left">
             <svg width="6px" height="9px" class="swipe-left-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-left"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-left"></use>
             </svg>
         </button>
         <button type="button" class="swipe-right">
             <svg width="6px" height="9px" class="swipe-right-icon">
-                <use href="./images/symbol-defs.svg#icon-chevron-right"></use>
+                <use href="/src/images/symbol-defs-category.svg#icon-right"></use>
             </svg>
         </button>
         <h2 class="name-category">
