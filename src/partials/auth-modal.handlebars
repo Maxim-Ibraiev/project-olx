@@ -12,19 +12,22 @@
       <h3 class="auth-modal-title primary">
          Ви можете авторизуватися за допомогою Google Account:
       </h3>
-      <button class="auth-modal-button-google">
-        <img src="" alt="">
-        <span class="auth-modal-button-google-text">
-          <svg   class="auth-modal-button-google-icon"
-                 width="18px"
-                 height="18px">
-                <use
-                    href="/src/images/symbol-defs.svg#icon-google">
-                </use>
-            </svg>
-          Google
-        </span> 
-      </button>
+      <form action="https://callboard-backend.herokuapp.com/auth/google" target="_blank">
+        <button class="auth-modal-button-google">
+          <img src="" alt="">
+          <span class="auth-modal-button-google-text">
+            <svg   class="auth-modal-button-google-icon"
+                   width="18px"
+                   height="18px">
+                  <use
+                      href="/src/images/symbol-defs.svg#icon-google">
+                  </use>
+              </svg>
+            Google
+          </span> 
+        </button>
+      </form>
+      
       <h3 class="auth-modal-title secondary">
          Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:
       </h3>
