@@ -1,3 +1,7 @@
+import ApiService from '../js/api-service';
+
+const apiService = new ApiService();
+
 const searchBtn = document.querySelector('button[data-modal="search"]');
 const modal = document.querySelector('.search-modal');
 const searchModalCloseIcon = document.querySelector('.search-modal-button-close');
@@ -27,7 +31,8 @@ function searchQuery() {
         infoMessage.classList.add('is-open')
     } else {
         infoMessage.classList.remove('is-open');
-        console.log(searchModalInput.value);
+        apiService.searchQuery = searchModalInput.value;
+        console.log(apiService.fetchSearchQuery());
     }  
 }
 
