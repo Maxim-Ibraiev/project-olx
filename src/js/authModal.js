@@ -16,7 +16,6 @@ import { data } from "jquery";
 
   // refs.authBackdrop.addEventListener('click', closeModal);
 
-
   function closeModal(){
     refs.authModal.classList.add('is-hidden');
   }
