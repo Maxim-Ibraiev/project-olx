@@ -1,12 +1,12 @@
 import refs from './refs';
 
-const { openModalAddBtn, body, addModalOverlay, selectorCategory } = refs;
+const { body, openModalAddBtn, addModalOverlay, selectorCategory } = refs;
 
 openModalAddBtn.addEventListener('click', handleOpenModal);
 
 function handleOpenModal() {
   addModalOverlay.classList.add('visible');
-  // body.classList.add('hidden');
+  body.classList.add('hidden');
 }
 
 fetch('https://callboard-backend.herokuapp.com/call/categories')
