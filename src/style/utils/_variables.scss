@@ -5,6 +5,16 @@ $mobile-upper: 768px;
 $table-lesser: 1279px;
 $table-upper: 1280px;
 
+$mobile: 320px;
+$before-mobile: $mobile - 1px;
+$post-mobile: $mobile + 1px;
+$tablet: 768px;
+$before-tablet: $tablet - 1px;
+$post-tablet: $tablet + 1px;
+$desktop: 1280px;
+$before-desktop: $desktop - 1px;
+$post-desktop: $desktop + 1px;
+
 // color
 
 $basic: #000000;
