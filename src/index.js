@@ -11,7 +11,6 @@ import heartfill from './images/heartfill.png';
 // import './js/cardAddToFavorites'
 import './componentsJS/add-modal-logic/add-modal-open';
 import './componentsJS/add-modal-logic/add-modal-close';
-import './componentsJS/add-modal-logic/add-modal-upload-file';
 import './componentsJS/add-modal-logic/add-modal-send';
 import './componentsJS/add-modal-logic/add-modal-validation';
 import './componentsJS/myCalls';
