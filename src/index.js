@@ -24,6 +24,7 @@ import './js/sliderMurkup';
 import './js/slickSlider';
 import './js/menu';
 //import './js/category'
-//import './js/categories';
 // import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
 //import './js/cardAddToCategory'
+import './js/main';
+//import './js/categories';
