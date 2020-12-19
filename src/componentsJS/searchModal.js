@@ -1,4 +1,5 @@
 import ApiService from '../js/api-service';
+import productCard from '../templates/productCard.handlebars';
 
 const apiService = new ApiService();
 
@@ -9,6 +10,8 @@ const searchModalSearchIcon = document.querySelector('.search-modal-button-searc
 const searchModalInput = document.querySelector('.search-modal-input');
 const searchModalOverlay = document.querySelector('.search-modal-overlay');
 const infoMessage = document.querySelector('.error-message');
+const headerContainer = document.querySelector('.header-container');
+const cardsWrapper = document.querySelector('.cards_wrapper');
 
 searchBtn.addEventListener('click', openSearchModal);
 searchModalCloseIcon.addEventListener('click', closeSearchModal);
@@ -32,7 +35,7 @@ function searchQuery() {
     } else {
         infoMessage.classList.remove('is-open');
         apiService.searchQuery = searchModalInput.value;
-        console.log(apiService.fetchSearchQuery());
+        apiService.fetchSearchQuery().then(cards => appendProdCardsMarkup(cards))
     }  
 }
 
@@ -42,4 +45,12 @@ function keyboardPress(event) {
     } else if (event.code === 'Enter') {
         searchQuery()
     }   
+}
+
+function appendProdCardsMarkup(cards) {
+  headerContainer.insertAdjacentHTML('afterend', productCard(cards));
+}
+
+function clearProdsCardContainer() {
+  cardsWrapper.innerHTML = '';
 }
