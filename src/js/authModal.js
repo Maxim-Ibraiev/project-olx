@@ -122,15 +122,9 @@ fetchLogInData(authInputData);
       .then(data => console.log(data));
 
       async function fetchDataLogin(){
-        const urlAuthUser = `${BASE_URL}/user`
-        const optionUser = {
-          method: 'GET',
-          // body: JSON.stringify(body),
-          headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-            },
-          }
-        const obj = await fetch(urlAuthUser, optionUser)
+        const urlAuthUser = `${BASE_URL}/auth/login`
+      
+        const obj = await fetch(urlAuthUser, option).then()
         // let result = {};
         const result = obj.json()
         console.log(result);
@@ -141,51 +135,7 @@ fetchLogInData(authInputData);
         }
         fetchDataLogin()
   }
-
-  // async function fetchDataLogin(){
-  //   // event.preventDefault();
-  //   // getAuthInputDataToLogin ()
-  //   // fetchLogInData()
-    
-  //   const obj = await fetch(urlAuthLogin, option)
-  //   // let result = {};
-  //   const result = obj.json()
-  //   // result.accessToken = result[0]
-  //   const token = result.then(data=>data.refreshToken)
-  //     localStorage.setItem('token', token)
-  //   }
-  //   fetchDataLogin()
 }
-
-
-      
-// async function fetchDataLogin() {
-//   // const postToAdd = {
-//   //   email: 'user5468878994545@example.com',
-//   //   password: 'qwerty123',
-//   // };
-  
-// }
-
-
-// const urlAuthLogin = `${BASE_URL}/auth/login`;
-  
-//   const option = {
-  //   method: 'POST',
-  //   body: JSON.stringify(authInputData),
-  //   headers: {
-  //     'Content-Type': 'application/json; charset=UTF-8',
-  //     },
-  // };
-  
-  // async function fetchDataLogin(){
-  // const obj = await fetch(urlAuthLogin, option)
-  // // let result = {};
-  // const result = obj.json()
-  // // result.accessToken = result[0]
-  // const token = result.then(data=>data.refreshToken)
-  //   localStorage.setItem('token', token)
-  // }
 
   // Registration
 function getAuthInputDataToSignin (event) {
