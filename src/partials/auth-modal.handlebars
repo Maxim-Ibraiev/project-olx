@@ -1,5 +1,5 @@
 <div class="auth-backdrop is-hidden" auth-modal>
-  <div class="container auth">
+  <div class="auth-container">
     <div class= "auth-modal">
         <button class="auth-modal-close" auth-modal-close>
             <svg width="24px"
@@ -12,26 +12,31 @@
       <h3 class="auth-modal-title primary">
          Ви можете авторизуватися за допомогою Google Account:
       </h3>
-      <button class="auth-modal-button-google">
-        <img src="" alt="">
-        <span class="auth-modal-button-google-text">
-          <svg   class="auth-modal-button-google-icon"
-                 width="18px"
-                 height="18px">
-                <use
-                    href="/src/images/symbol-defs.svg#icon-google">
-                </use>
-            </svg>
-          Google
-        </span> 
-      </button>
+      <form action="https://callboard-backend.herokuapp.com/auth/google" target="_blank">
+        <button class="auth-modal-button-google">
+          <img src="" alt="">
+          <span class="auth-modal-button-google-text">
+            <svg   class="auth-modal-button-google-icon"
+                   width="18px"
+                   height="18px">
+                  <use
+                      href="/src/images/symbol-defs.svg#icon-google">
+                  </use>
+              </svg>
+            Google
+          </span> 
+        </button>
+      </form>
+      
       <h3 class="auth-modal-title secondary">
          Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:
       </h3>
-      <form class="auth-modal-form" action="">
+      <form class="auth-modal-form" action="" id="auth-modal-form">
        <input class="auth-modal-input email" type="email" name="email" id="email" placeholder = "E-mail" required>
+       <div id="messenger-email"></div>
        <label for="email" class="auth-input-label"></label>
        <input class="auth-modal-input password" type="password" name="password" id="password" placeholder = "Password" required pattern = "^.{6,}$" title="Мінімум 6 символів"> <!--pattern = "^.{6,}$" title="Мінімум 6 символів, серед яких лише латинські букви [A-z] та цифри [0-9]"-->
+       <div id="messenger-password"></div>
        <label for="password" class="auth-input-label"></label>
       <button class="auth-modal-button log-in">
         <span class="log-in-text">

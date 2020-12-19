@@ -26,16 +26,32 @@ body.modal-open {
     transform: translate(-50%, -50%) scale(0, 9);
   }
   
-  .auth{
-    max-width: 320px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
+  .auth-container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  
     @media screen and (min-width: $mobile-upper) {
-        margin-right: 59px;
-        margin-left: 59px;
-      }
-}
+      padding-right: 22px;
+      padding-left: 22px;
+    }
+  
+    @media screen and (min-width: $table-upper) {
+      padding-right: 20px;
+      padding-left: 20px;
+      max-width: $table-upper;
+    }
+  }
+//     max-width: 320px;
+//     padding-top: 15px;
+//     padding-bottom: 15px;
+
+//     @media screen and (min-width: $mobile-upper) {
+//         margin-right: 59px;
+//         margin-left: 59px;
+//       }
+// }
 
 .auth-modal{
     position: relative;
@@ -194,6 +210,10 @@ body.modal-open {
     }
 }
 
+.error{
+    position: absolute;
+    top:50px;
+}
 
 
 // .auth-input-label + .auth-modal-input:focus,
