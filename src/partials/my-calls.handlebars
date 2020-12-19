@@ -1,10 +1,10 @@
- <button type="button" data-action="open-modal-calls">Открыть "Редагувати оголошення"</button> 
+<button type="button" data-action="open-modal-calls">Открыть "Редагувати оголошення"</button>
 
 <!-- Модалка -->
 
 <div class="my-calls-backdrop">
-    <div class="my-calls-modal js-my-call-modal" >
-        <form action="" method="" name="MY-CALLS">
+    <div class="my-calls-modal js-my-call-modal">
+        <form action="" method="" name="MY-CALLS" id="form">
             <button class="my-calls-close-btn" data-action="close-modal-calls">
                 <svg width="24px" height="24px">
                     <use href="/src/images/symbol-defs.svg#icon-close">
@@ -16,38 +16,47 @@
                 <label class="my-calls-section-label">
                     <p class="my-calls-item-p my-calls-name">Назва товару</p>
                 </label>
-                <input type="text" class="my-calls-input js-my-calls-input" />
+                <input type="text" name="title" class="my-calls-input js-my-calls-input" />
             </div>
-            <div class="my-calls-section">
-                <p class="my-calls-item-p my-calls-foto">Фото</p>
-                <div class="my-calls-input-placeholders">
-                    <label class="my-calls-input-placeholders-label" for="input_file_first">
-                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
-                    </label>
-                    <input class="display_none" id="input_file_first" type="file" accept="image/*" />
-                    <label class="my-calls-input-placeholders-label" class="my-calls-input-placeholders-label"
-                        for="input_file_second">
-                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
-                    </label>
-                    <input class="display_none" id="input_file_second" type="file" accept="image/*" />
-                    <label class="my-calls-input-placeholders-label" for="input_file_third">
-                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
-                    </label>
-                    <input class="display_none" id="input_file_third" type="file" accept="image/*" />
-                    <label class="my-calls-input-placeholders-label" for="input_file_fourth">
-                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
-                    </label>
-                    <input class="display_none" id="input_file_fourth" type="file" accept="image/*" />
-                    <label class="my-calls-input-placeholders-label" for="input_file_fifth">
-                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
-                    </label>
-                    <input class="display_none" id="input_file_fifth" type="file" accept="image/*" />
-                    <label class="my-calls-input-placeholders-label x" for="input_file_secondth">
-                        <img class="my-calls-input-placeholders-label-img" src="../images/placeholder.png">
-                    </label>
-                    <input class="display_none" id="input_file_secondth" type="file" accept="image/*" />
+            <form action="#" class="js-my-calls-form">
+                <div class="my-calls-section">
+                    <p class="my-calls-item-p my-calls-foto">Фото</p>
+                    <div class="my-calls-input-placeholders">
+                        <label class="my-calls-input-placeholders-label" for="input_file_first"
+                            class="my-calls-input-placeholders-label">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </label>
+                        <input class="display_none" name="input_file_first" id="input_file_first" type="file"
+                            accept="image/*" />
+
+                        {{!-- <label class="my-calls-input-placeholders-label" class="my-calls-input-placeholders-label"
+                            for="input_file_second">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </label>
+                        <input class="display_none" id="input_file_second" name="input_file_second" type="file" accept="image/*" />
+
+                        <label class="my-calls-input-placeholders-label" for="input_file_third">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </label>
+                        <input class="display_none" id="input_file_third" name="input_file_third" type="file" accept="image/*" />
+
+                        <label class="my-calls-input-placeholders-label" for="input_file_fourth">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </label>
+                        <input class="display_none" id="input_file_fourth" name="input_file_fourth" type="file" accept="image/*" />
+
+                        <label class="my-calls-input-placeholders-label" for="input_file_fifth">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </label>
+                        <input class="display_none" id="input_file_fifth" name="input_file_fifth" type="file" accept="image/*" />
+
+                        <label class="my-calls-input-placeholders-label x" for="input_file_secondth">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </label>
+                        <input class="display_none" id="input_file_secondth" name="input_file_secondth" type="file" accept="image/*" /> --}}
+                    </div>
                 </div>
-            </div>
+            </form>
             <div class="my-calls-section">
                 <p class="my-calls-item-p">Опис товару</p>
                 <textarea class="my-calls-textarea js-my-calls-input" name="comment"></textarea>
@@ -56,17 +65,10 @@
                 <label class="my-calls-section-label">
                     <p class="my-calls-item-p my-calls-gods">Категорія товару</p>
                 </label>
-                <input list="categories" class="my-calls-input js-my-calls-input" />
-                <datalist id="categories">
-                    <option>Нерухомість</option>
-                    <option>Транспорт</option>
-                    <option>Робота</option>
-                    <option>Електроніка</option>
-                    <option>Бізнес та послуги</option>
-                    <option>Відпочинок і спорт</option>
-                    <option>Віддам безкоштовно</option>
-                    <option>Обмін</option>
-                </datalist>
+                {{!-- <input list="categories" class="my-calls-input js-my-calls-input" /> --}}
+                <select id="categories" class="my-calls-input my-calls-option">
+
+                </select>
             </div>
             <div class="my-calls-section">
                 <label class="my-calls-section-label">
@@ -78,7 +80,8 @@
                 <label class="my-calls-section-label">
                     <p class="my-calls-item-p  my-calls-tel">Телефон</p>
                 </label>
-                <input type="tel" name="telephone" class="my-calls-input js-my-calls-input" placeholder="+38 (0--) --- -- --" />
+                <input type="tel" name="telephone" class="my-calls-input js-my-calls-input"
+                    placeholder="+38 (0--) --- -- --" />
             </div>
             <button type="button" class="my-calls-delete-btn">
                 <svg width="14px" height="14px">

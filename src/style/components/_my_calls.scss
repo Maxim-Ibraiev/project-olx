@@ -2,11 +2,13 @@ body.is-open .my-calls-backdrop {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+
+  font-family: Roboto,-apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body.is-open .my-calls-modal {
   opacity: 1;
-  transform: scale(0.9);
+  transform: scale(1);
   // z-index: 2;
 }
 
@@ -14,11 +16,11 @@ body.is-open .my-calls-modal {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 946px;
   background-color: rgba(0, 0, 0, 0.7);
   // z-index: 1;
 
@@ -27,325 +29,345 @@ body.is-open .my-calls-modal {
   visibility: hidden;
   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
-  
+
+.my-calls-modal {
+  position: relative;
+  /* z-index: 3; */
+
+  width: 290px;
+  width: 290px;
+  height: 889px;
+  padding-left: 18px;
+  padding-right: 20px;
+  padding-top: 54px;
+  padding-bottom: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #ffffff;
+
+  // opacity: 0;
+
+  transform: scale(0.7);
+  transition: transform 200ms ease-in-out;
+
+  label {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .my-calls-modal {
-   
-    position: relative;
-    /* z-index: 3; */
-  
-    min-width: 290px;
-    // width: 100%;
-    height: 889px;
-    padding-left: 18px;
-    padding-right: 20px;
+    width: 724px;
+    height: 730px;
+    padding-left: 53px;
+    padding-right: 55px;
     padding-top: 54px;
-    padding-bottom: 40px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #ffffff;
+    padding-bottom: 59px;
+  }
+}
 
-    // opacity: 0;
-    
-    transform: scale(0.7);
-    transition: transform 200ms ease-in-out;
+@media screen and (min-width: 1280px) {
+  .my-calls-modal {
+    width: 861px;
+    padding-left: 105px;
+    padding-right: 105px;
   }
-  
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-modal{
-      width: 724px;
-      height: 730px;
-      padding-left: 53px;
-      padding-right: 55px;
-      padding-top: 54px;
-      padding-bottom: 59px;
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .my-calls-modal{
-      width: 861px;
-      padding-left: 105px;
-      padding-right: 105px;
-    }
-  }
-  
-  .my-calls-title {
-    margin-bottom: 20px;
-    
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    letter-spacing: 0.02em;
-  }
-  
-  .my-calls-item-p {
-    margin-bottom: 10px;
-  
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-  }
-  
+}
+
+.my-calls-title {
+  margin-bottom: 20px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+}
+
+.my-calls-item-p {
+  margin-bottom: 10px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+.my-calls-section {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
   .my-calls-section {
-    margin-bottom: 20px;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  
-  }
-  
-  .my-calls-input {
-    min-width: 250px;
-    min-height: 56px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    border: 1px solid #BBBBBB;
-  
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-input {
-      min-width: 458px;
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .my-calls-input {
-      min-width: 440px;
-    }
-  }
-  
-  .my-calls-input::placeholder{
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-  
-    color: #BBBBBB;
-  }
-  
-  .my-calls-input-placeholders{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .my-calls-input-placeholders-label{
-    margin-right: 7px;
-  }
-  
-  @media screen and (max-width: 767px) {
-    .my-calls-input-placeholders-label:nth-last-child(3n+2){
-      margin-right: 0px;
-    }
-  }
-  
-  .my-calls-input-placeholders-label-img{
-    width: 78px;
-    height: 46px;
-  }
-  
-  .my-calls-input-placeholders-label-img:nth-child(-n + 4){
-    margin-bottom: 10px;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-input-placeholders-label-img{
-      width: 84px;
-      height: 50px;
-    }
-  
-    .x{
-      display: none;
-    }
-
-    .my-calls-input-placeholders-label{
-      margin-right: 10px;
-    }
-
-    .my-calls-input-placeholders-label:nth-child(3){
-      margin-right: 10px;
-    }
-
-    .my-calls-input-placeholders-label:nth-child(9){
-      margin-right: 0px;
-    }
-  }
-
-
-  @media screen and (min-width: 1280px) {
-    .my-calls-input-placeholders-label{
-      margin-right: 5px;
-    }
-  }
-  .my-calls-delete{
-    display: block;
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    
-  
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-  
-    letter-spacing: 0.07em;
-  }
-  
-  .my-calls-btn-org {
-    display: inline-block;
-    width: 119px;
-    height: 50px;
-    margin-right: 15px;
-    border: 1px solid transparent;
-  
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-  
-    background-color: #FF6B09;
-    color: #ffffff;
-  
-    cursor: pointer;
-  }
-  
-  .my-calls-btn-wt {
-    display: block;
-    width: 119px;
-    height: 50px;
-    border: 1px solid #BBBBBB;
-  
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-  
-    background-color: #ffffff;
-    color: #000000;
-  
-    cursor: pointer;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-btn-wt, .my-calls-btn-org {
-      width: 210px;
-      height: 60px;
-      text-transform: uppercase;
-    }
-  
-    .my-calls-btn-org{
-      margin-right: 20px;
-    }
-  }
-  
-  .my-calls-btns {
-    display: flex;
-    margin-top: 20px;
-  
-    cursor: pointer;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-btns {
-      margin-left: 152px;
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .my-calls-btns {
-      margin-left: 206px;
-    }
-  }
-  
-  .my-calls-textarea {
-    width: 251px;
-    height: 56px;
-    padding-left: 10px;
-    padding-top: 7px;
-    border: 1px solid #BBBBBB;
-  
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.02em;
-  
-    color: #000000;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-textarea{
-      width: 458px;
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .my-calls-textarea{
-      width: 440px;
-    }
-  }
-  
-  .my-calls-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    height: 28px;
-    border: none;
-    background-color: inherit;
-  
-    cursor: pointer;
-  }
-  
-  .my-calls-delete-btn {
     display: flex;
     align-items: center;
-    border: none;
-    background-color: inherit;
-  
-    cursor: pointer;
+    justify-content: space-between;
   }
-  
-  @media screen and (min-width: 768px) {
-    .my-calls-delete-btn {
-      margin-left: 152px;
-    }
+}
+
+.my-calls-input {
+  min-width: 250px;
+  min-height: 56px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border: 1px solid #bbbbbb;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (min-width: 768px) {
+  .my-calls-input {
+    width: 458px;
   }
-  
+}
+
+@media screen and (min-width: 1280px) {
+  .my-calls-input {
+    width: 440px;
+  }
+}
+
+.my-calls-input::placeholder {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+
+  color: #bbbbbb;
+}
+
+.my-calls-input-placeholders {
+  display: flex;
+  flex-wrap: wrap;
+
   @media screen and (min-width: 1280px) {
-    .my-calls-delete-btn {
-      margin-left: 205px;
+    margin-right: 10px;    
+  }
+
+  @media screen and (min-width: 767px)  {
+    @media screen and (max-width: 1280px){
+      width: 459px;
+      display: flex;
+      justify-content: space-between;
     }
   }
-  
-  .my-calls-delete-item {
-    margin-left: 10px;
-  
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.07em;
+}
+
+.my-calls-input-placeholders-label {
+    margin-right: 7px;
+}
+
+@media screen and (max-width: 767px) {
+  .my-calls-input-placeholders-label:nth-last-child(3n + 2) {
+    margin-right: 0px;
   }
-  
-  .display_none{
+  .my-calls-input-placeholders-label:nth-child(-n +3) {
+    margin-bottom: 10px;
+  }
+}
+
+.my-calls-input-placeholders-label-img {
+  width: 76px;
+  height: 46px;
+
+}
+
+
+// .my-calls-input-placeholders-label-img:nth-child(-n + 3) {
+//   margin-bottom: 0;
+// }
+// .my-calls-input-placeholders-label-img:nth-child(-n + 4) {
+//   margin-bottom: 10px;
+// }
+
+@media screen and (min-width: 768px) {
+  .my-calls-input-placeholders-label-img {
+    width: 84px;
+    height: 50px;
+  }
+
+  .x {
     display: none;
   }
 
-  // .delete-icon-calls{
-  //   background-image: url('./images/file.svg');
-  // }
+  .my-calls-input-placeholders-label:nth-child(3) {
+    margin-right: 10px;
+  }
+
+  .my-calls-input-placeholders-label:nth-child(9) {
+    margin-right: 0px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .my-calls-input-placeholders-label-img {
+    width: 78px;
+  }
+
+  .my-calls-input-placeholders-label {
+    margin-right: 10px;
+  }
+}
+.my-calls-delete {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+
+  letter-spacing: 0.07em;
+}
+
+.my-calls-btn-org {
+  display: inline-block;
+  width: 119px;
+  height: 50px;
+  margin-right: 15px;
+  border: 1px solid transparent;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+
+  background-color: #ff6b09;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.my-calls-btn-wt {
+  display: block;
+  width: 119px;
+  height: 50px;
+  border: 1px solid #bbbbbb;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+
+  background-color: #ffffff;
+  color: #000000;
+
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .my-calls-btn-wt,
+  .my-calls-btn-org {
+    width: 210px;
+    height: 60px;
+    text-transform: uppercase;
+  }
+
+  .my-calls-btn-org {
+    margin-right: 20px;
+  }
+}
+
+.my-calls-btns {
+  display: flex;
+  margin-top: 20px;
+
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .my-calls-btns {
+    margin-left: 152px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .my-calls-btns {
+    margin-left: 206px;
+  }
+}
+
+.my-calls-textarea {
+  width: 251px;
+  height: 56px;
+  padding-left: 10px;
+  padding-top: 7px;
+  border: 1px solid #bbbbbb;
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .my-calls-textarea {
+    width: 458px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .my-calls-textarea {
+    width: 440px;
+  }
+}
+
+.my-calls-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 28px;
+  border: none;
+  background-color: inherit;
+
+  cursor: pointer;
+}
+
+.my-calls-delete-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .my-calls-delete-btn {
+    margin-left: 152px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .my-calls-delete-btn {
+    margin-left: 205px;
+  }
+}
+
+.my-calls-delete-item {
+  margin-left: 10px;
+
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.07em;
+}
+
+.display_none {
+  display: none;
+}
+
+// .delete-icon-calls{
+//   background-image: url('./images/file.svg');
+// }
