@@ -1,137 +1,172 @@
+import { data } from "jquery";
+
 (() => {
-    const refs = {
-      openAuthModalBtn: document.querySelector('[auth-modal-open]'),
-      closeAuthModalBtn: document.querySelector('[auth-modal-close]'),
-      authModal: document.querySelector('[auth-modal]'),
-    };
-  
-    refs.openAuthModalBtn.addEventListener('click', toggleModal);
-    refs.closeAuthModalBtn.addEventListener('click', toggleModal);
-  
-    function toggleModal() {
-      refs.authModal.classList.toggle('is-hidden');
-    }
-  })();
+  const refs = {
+    openAuthModalBtn: document.querySelector('[auth-modal-open]'),
+    closeAuthModalBtn: document.querySelector('[auth-modal-close]'),
+    authModal: document.querySelector('[auth-modal]'),
+    authBackdrop: document.querySelector('.auth-backdrop'),
+    // authContainer: document.querySelector('.auth-container'),
 
+  };
 
-const email = document.querySelector("#email");
-const password = document.querySelector("#password")
-email.addEventListener("input", function (event) {
-  if (email.validity.typeMismatch) {
-    email.setCustomValidity("Введіть коректний e-mail!");
-  } else {
-    email.setCustomValidity("");
+  refs.authBackdrop.addEventListener('click', closeAuthModalByClickToBackdrop);
+  refs.openAuthModalBtn.addEventListener('click', toggleModal);
+  refs.closeAuthModalBtn.addEventListener('click', toggleModal);
+
+  // refs.authBackdrop.addEventListener('click', closeModal);
+
+  function closeModal(){
+    refs.authModal.classList.add('is-hidden');
   }
-});
 
-// import axios from 'axios';
+  window.addEventListener('keydown', closeModalbyEsc)
+    function closeModalbyEsc (evt){
+  if (evt.code === "Escape"){
+  closeModal()
+  }
+ }
+
+  function toggleModal() {
+    refs.authModal.classList.toggle('is-hidden');
+  }
+
+  function closeAuthModalByClickToBackdrop(evt){
+    if(evt.target === evt.currentTarget){
+      closeModal()
+    }
+  }
+
+})();
+
+const authForm = document.querySelector('.auth-modal-form');
+// console.log(authForm);
+const authValidateButton = document.querySelectorAll('.auth-modal-button');
+// console.log(authValidateButton);
+const emailInput = document.querySelector('.email')
+const passwordInput = document.querySelector('.password')
+const validateFields = authForm.querySelectorAll('.auth-modal-input')
+
+const generateError = function (text) {
+  var error = document.createElement('div')
+  error.className = 'error'
+  error.style.color = 'red'
+  error.innerHTML = text
+  return error
+}
+
+const removeValidation = function () {
+  var errors = authForm.querySelectorAll('.error')
+    for (var i = 0; i < errors.length; i++) {
+    errors[i].remove()
+    }
+  }
+
+const checkFieldsPresence = function () {
+  for (let i = 0; i < validateFields.length; i++) {
+      if (!validateFields[i].value) {
+        console.log('field is blank', validateFields[i])
+        let error = generateError('Заповніть корректно!')
+      authForm[i].parentElement.insertBefore(error, validateFields[i])
+      }
+    }
+}
+
+const validateFormFunction = function (event){
+removeValidation()
+checkFieldsPresence()
+}
+
+authForm.addEventListener('submit', validateFormFunction)
 
 const BASE_URL = 'https://callboard-backend.herokuapp.com';
 
+// const signInByGoogle = document.querySelector('.auth-modal-button-google');
 const logInBtnRef = document.querySelector('.log-in');
 const signInBtnRef = document.querySelector('.sign-in');
-// const authModalInputRef = document.querySelectorAll('.auth-modal-input');
 const registerFormRef = document.querySelector('.auth-modal-form');
+const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
 
-const urlAuthLogin = `${BASE_URL}/auth/login`;
-const urlAuthSignin = `${BASE_URL}/auth/register`;
-logInBtnRef.addEventListener('click', getAuthInputData)
+logInBtnRef.addEventListener('click', getAuthInputDataToLogin)
+signInBtnRef.addEventListener('click', getAuthInputDataToSignin)
 
-function getAuthInputData (event) {
-   const authInputs = registerFormRef.querySelectorAll('.auth-modal-input');
-   const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
-     acc.push(el.value)
-     return acc
-   },[])
+  // Log-in
+function getAuthInputDataToLogin (event) {
+  event.preventDefault();
+  validateFormFunction()
   
-  authInputData.email = arrValue[0]
-  authInputData.password = arrValue[1]
-  console.log(authInputData);
+ const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
+   acc.push(el.value)
+   return acc
+ },[])
 
-const toFetchData = {
-  email: authInputData.email,
-  password: authInputData.password,
-};
+  let authInputData ={};
+  authInputData.email = arrAuthInputValue[0]
+  authInputData.password = arrAuthInputValue[1]
+  // console.log(authInputData);
 
-const option = {
-  method: 'POST',
-  body: JSON.stringify(toFetchData),
-  headers: {
-    'Content-Type': 'application/json; charset=UTF-8',
-  },
-};
+fetchLogInData(authInputData);
 
-const myHeaders = new Headers();
+  function fetchLogInData(body){
+    const urlAuthLogin = `${BASE_URL}/auth/login`;
+    const option = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        },
+    };
+      fetch(urlAuthLogin, option)
+      .then(r => r.json())
+      .then(data => console.log(data));
 
-myHeaders.append('Content-Type', 'application/json');
-myHeaders.append(
-  'Authorization',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-);
-
- // Log-in
-
-fetch(urlAuthLogin, option)
- .then((r) => r.json())
- .then(console.log);
+      async function fetchDataLogin(){
+        const urlAuthUser = `${BASE_URL}/auth/login`
+      
+        const obj = await fetch(urlAuthUser, option).then()
+        // let result = {};
+        const result = obj.json()
+        console.log(result);
+        // result.accessToken = result[0]
+        const token = result.then(data=>data.refreshToken)
+        console.log(token);
+          localStorage.setItem('token', token)
+        }
+        fetchDataLogin()
+  }
 }
 
+  // Registration
+function getAuthInputDataToSignin (event) {
+  
+  // event.preventDefault();
+  validateFormFunction()
+ 
+ const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
+   acc.push(el.value)
+   return acc
+ },[])
 
-
-
-
-// const registerUser = userData => {
-//     const { email, password } = userData;
-//     return axios.post(`${BASE_URL}/auth/login`, {email, password});
-// }
-// // const logInButton = document.querySelector('.log-in')
-// const registerFormRef = document.querySelector('.auth-modal-form');
-// //const emailRef = document.querySelector('.email');
-// //const passwordRef = document.querySelector('.password');
-// const handleRegisterSubmit = event => {
-//     event.preventDefault();
-//     const { target: form } = event;
-//     // const { emailRef, passwordRef } = event;
-//     // const { currentTarget: form } = event.target;
-//     // const { registerFormRef } = event;
-//     const formData = new FormData(form);
-//     // const formData = new FormData(emailRef, passwordRef);
-//     const body = {}
-
-//     formData.forEach((value, key)=> {
-//         body[key] = value;
-//     })
-
-//     // )
-//     // registerUser(event)
-//     registerUser(body)
-//         .then(({data}) => console.log(data))
-//         // .then(({emailRef, passwordRef}) => console.log(emailRef, passwordRef))
-// }
-
-// // logInButton.addEventListener('click', handleRegisterSubmit)
-
-// const registerFormRef = document.querySelector('.auth-modal-form');
-// // console.log(registerFormRef)
-// const handleRegisterSubmit = event => {
-//     event.preventDefault();
-
-//     const { currentTarget: form } = event;
-//     const formData = new FormData(form);
-//     const body = {}
-
-//     formData.forEach((value, key)=> {
-//         body[key] = value;
-//     })
-//     console.log(body)
-//     // console.log(formData);
-//     // formData.forEach((value, key) => {
-//     //     console.log(key.value);
-//     // })    
-//     registerUser(body)
-//         .then(result => console.log(result))
-// }
-
-// // registerFormRef.addEventListener('submit', handleRegisterSubmit)
+  let authInputData ={};
+  authInputData.email = arrAuthInputValue[0]
+  authInputData.password = arrAuthInputValue[1]
+  // console.log(authInputData);
+ 
+  fetchSignInData(authInputData);
+ 
+  function fetchSignInData(body){
+    const urlAuthSignIn = `${BASE_URL}/auth/register`;
+    const option = {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        },
+      };
+      fetch(urlAuthSignIn, option)
+      .then(r => r.json())
+      .then(data =>console.log(data));
+  }
+}
 
 

@@ -13,13 +13,7 @@ const option = {
   },
 };
 
-const myHeaders = new Headers();
 
-myHeaders.append('Content-Type', 'application/json');
-myHeaders.append(
-  'Authorization',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-);
 
 /* 
 ///////////////// Регистрация /////////////////
