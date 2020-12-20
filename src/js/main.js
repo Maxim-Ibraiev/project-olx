@@ -9,7 +9,7 @@ import oneSliderTpl from '../templates/one-slider.handlebars';
 
 const mainСontainerRef = document.querySelector('.main-container');
 const BASE_URL = 'https://callboard-backend.herokuapp.com';
-const paginationGroup = document.querySelector('.pagination-div');
+const paginationGroup = document.querySelector('.pagination-container');
 
 class AllCategory {
     constructor() {
@@ -44,9 +44,21 @@ class AllCategory {
 
 const category = new AllCategory();
 
+const firstPageBtn = document.querySelector('[data-atribute="one-page"]');
+const secondPageBtn = document.querySelector(`[data-atribute="two-page"]`);
+const thirdPageBtn = document.querySelector(`[data-atribute="three-page"]`);
+
+firstPageBtn.addEventListener('click', markOnePage);
+secondPageBtn.addEventListener('click', markTwoPage);
+thirdPageBtn.addEventListener('click', markThreePage);
+
+firstPageBtn.classList.add('is-active');
+
 function markOnePage() {
     // console.log(document.querySelector('.button-next-pages').textContent === event.path[0].innerText);
     // event.preventDefault();
+    
+
     category.onePage();
 
     category.fetchAllCategory().then(result => {
@@ -62,13 +74,15 @@ function markOnePage() {
         renderCard(response);
     });
 
-    document.querySelector(`[data-atribute="one-page"]`).removeEventListener('click', markThreePage);
+    firstPageBtn.classList.add('is-active');
+    thirdPageBtn.classList.remove('is-active');
+    secondPageBtn.classList.remove('is-active');
+
+    // secondPageBtn.removeEventListener('click', markTwoPage);
+    // thirdPageBtn.removeEventListener('click', markThreePage);
 } 
 
 markOnePage();
-document.querySelector(`[data-atribute="one-page"]`).addEventListener('click', markOnePage);
-document.querySelector(`[data-atribute="two-page"]`).addEventListener('click', markTwoPage);
-document.querySelector(`[data-atribute="three-page"]`).addEventListener('click', markThreePage);
 
 
 function markTwoPage(event) {
@@ -89,7 +103,12 @@ function markTwoPage(event) {
         renderCard(response);
     });
 
-    document.querySelector(`[data-atribute="two-page"]`).removeEventListener('click', markTwoPage);
+    firstPageBtn.classList.remove('is-active');
+    thirdPageBtn.classList.remove('is-active');
+    secondPageBtn.classList.add('is-active');
+
+    // firstPageBtn.removeEventListener('click', markOnePage);
+    // thirdPageBtn.removeEventListener('click', markThreePage);
 }
 
 function markThreePage(event) {
@@ -110,7 +129,12 @@ function markThreePage(event) {
         renderCard(response);
     });
 
-    document.querySelector(`[data-atribute="three-page"]`).removeEventListener('click', markThreePage);
+    firstPageBtn.classList.remove('is-active');
+    thirdPageBtn.classList.add('is-active');
+    secondPageBtn.classList.remove('is-active');
+
+    // firstPageBtn.removeEventListener('click', markOnePage);
+    // secondPageBtn.removeEventListener('click', markTwoPage);
 }
 
 function renderSlaider(result) {

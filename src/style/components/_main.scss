@@ -1,5 +1,5 @@
 .section {
-  background-color: #E5E5E5;
+  background-color: #eeeeee;
   padding-top: 30px;
   padding-bottom: 30px;
   // border: solid 1px red;
@@ -73,6 +73,7 @@
   padding-bottom: 2px;
   @media screen and (max-width: $before-tablet) {
     min-width: 285px;
+    align-items: center;
   }
   @media screen and (min-width: $tablet) {
     max-width: 725px;
@@ -86,19 +87,28 @@
   // border: rebeccapurple 1px solid;
 }
 
+
 .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
   font-size: 12px;
-  font-style: bold;
   line-height: 1.21;
   margin: 0px;
-  min-width: 160px;
+  min-width: 170px;
+  text-transform: uppercase;
   // border: solid 1px rebeccapurple;
 }
 
 .section-text {
+  font-family: 'Montserrat';
   font-size: 12px;
   font-weight: normal;
   line-height: 1.21;
+  // text-decoration-line: underline;
+  border: none;
+  border-bottom: 1px solid $accent;
+  background-color: inherit;
 
   margin: 0px;
   // margin-top: 10px;
@@ -106,6 +116,7 @@
   color: $accent;
 
   min-width: 100px;
+  height: 15px;
   // border: solid 1px rebeccapurple;
 }
 
