@@ -18,18 +18,44 @@
                 </label>
                 <input type="text" name="title" class="my-calls-input js-my-calls-input" />
             </div>
-            <form action="#" class="js-my-calls-form">
+            <div action="#" class="js-my-calls-form">
                 <div class="my-calls-section">
                     <p class="my-calls-item-p my-calls-foto">Фото</p>
                     <div class="my-calls-input-placeholders">
-                        <label class="my-calls-input-placeholders-label" for="input_file_first"
+                        <label class="my-calls-input-placeholders-label" for="file"
+                            class="my-calls-input-placeholders-label">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                            <input
+                                name="file"
+                                accept=".jpg"
+                                type="file"
+                                class="choose-image__input js-my-call-input add-image"
+                                multiple
+                            >
+                            <div class="my-calls-button">+</div>
+                        </label>
+
+                        <div class="my-calls-input-placeholders-label">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </div>
+                        <div class="my-calls-input-placeholders-label">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </div>
+                        <div class="my-calls-input-placeholders-label">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </div>
+                        <div class="my-calls-input-placeholders-label">
+                            <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
+                        </div>
+                        
+                        {{!-- <label class="my-calls-input-placeholders-label" for="input_file_first"
                             class="my-calls-input-placeholders-label">
                             <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
                         </label>
                         <input class="display_none" name="input_file_first" id="input_file_first" type="file"
                             accept="image/*" />
 
-                        {{!-- <label class="my-calls-input-placeholders-label" class="my-calls-input-placeholders-label"
+                        <label class="my-calls-input-placeholders-label" class="my-calls-input-placeholders-label"
                             for="input_file_second">
                             <img class="my-calls-input-placeholders-label-img" src="/src/images/placeholder.png">
                         </label>
@@ -56,10 +82,10 @@
                         <input class="display_none" id="input_file_secondth" name="input_file_secondth" type="file" accept="image/*" /> --}}
                     </div>
                 </div>
-            </form>
+            </div>
             <div class="my-calls-section">
                 <p class="my-calls-item-p">Опис товару</p>
-                <textarea class="my-calls-textarea js-my-calls-input" name="comment"></textarea>
+                <textarea class="my-calls-textarea js-my-calls-input" name="description"></textarea>
             </div>
             <div class="my-calls-section">
                 <label class="my-calls-section-label">
@@ -74,13 +100,13 @@
                 <label class="my-calls-section-label">
                     <p class="my-calls-item-p  my-calls-price">Ціна</p>
                 </label>
-                <input type="text" class="my-calls-input js-my-calls-input" placeholder="0.00 грн" />
+                <input type="text" class="my-calls-input js-my-calls-input" name="price" placeholder="0.00 грн" />
             </div>
             <div class="my-calls-section">
                 <label class="my-calls-section-label">
                     <p class="my-calls-item-p  my-calls-tel">Телефон</p>
                 </label>
-                <input type="tel" name="telephone" class="my-calls-input js-my-calls-input"
+                <input type="tel" name="phone" class="my-calls-input js-my-calls-input"
                     placeholder="+38 (0--) --- -- --" />
             </div>
             <button type="button" class="my-calls-delete-btn">

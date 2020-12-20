@@ -1,14 +1,11 @@
 export default {
-  imageUrls: [
-    'https://storage.googleapis.com/kidslikev2_bucket/07f526f8-4cbe-4d47-8b3a-ffd3cdc3e150.jpeg',
-  ],
-  _id: '5fd076b7deae5f0017e41a7d',
-  title: 'Red Shirt',
-  description: 'New red shirt, made from cotton',
-  category: 'business and services',
-  price: 255,
-  phone: '+380000000000',
+  category: "business and services",
+  description: "New red shirt, made from cotton",
+  id: "5fdf0650e9633c0017af66b2",
+  imageUrls: ["https://storage.googleapis.com/kidslikev2_bucket/52ebaba7-d694-42a8-8c56-4888ceb7eb4b.jpg"],
   isOnSale: false,
-  userId: '5fcf371a2d55d90017ae3391',
-  __v: 0,
+  phone: "+380000000000",
+  price: 255,
+  title: "Red Shirt",
+  userId: "5fd332a680dabd00179d7faf",
 };

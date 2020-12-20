@@ -161,7 +161,9 @@ body.is-open .my-calls-modal {
 }
 
 .my-calls-input-placeholders-label {
-    margin-right: 7px;
+  position: relative;
+
+  margin-right: 7px;
 }
 
 @media screen and (max-width: 767px) {
@@ -211,9 +213,9 @@ body.is-open .my-calls-modal {
     width: 78px;
   }
 
-  .my-calls-input-placeholders-label {
-    margin-right: 10px;
-  }
+  // .my-calls-input-placeholders-label {
+  //   margin-right: 10px;
+  // }
 }
 .my-calls-delete {
   display: block;
@@ -368,6 +370,14 @@ body.is-open .my-calls-modal {
   display: none;
 }
 
+.my-calls-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  pointer-events: none;
+}
 // .delete-icon-calls{
 //   background-image: url('./images/file.svg');
 // }
