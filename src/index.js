@@ -12,7 +12,6 @@ import heartfill from './images/heartfill.png';
 // import './js/cardAddToFavorites'
 import './componentsJS/add-modal-logic/add-modal-open';
 import './componentsJS/add-modal-logic/add-modal-close';
-import './componentsJS/add-modal-logic/add-modal-upload-file';
 import './componentsJS/add-modal-logic/add-modal-send';
 import './componentsJS/add-modal-logic/add-modal-validation';
 import './componentsJS/myCalls';
@@ -24,5 +23,8 @@ import './js/authModal';
 import './js/sliderMurkup';
 import './js/slickSlider';
 import './js/menu';
-import './js/categories';
+//import './js/category'
 // import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
+//import './js/cardAddToCategory'
+import './js/main';
+// import './js/categories';

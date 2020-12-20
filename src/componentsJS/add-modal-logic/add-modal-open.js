@@ -1,6 +1,6 @@
 import refs from './refs';
 
-const { openModalAddBtn, body, addModalOverlay, selectorCategory } = refs;
+const { body, openModalAddBtn, addModalOverlay, selectorCategory } = refs;
 
 openModalAddBtn.addEventListener('click', handleOpenModal);
 

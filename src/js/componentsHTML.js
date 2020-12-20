@@ -1,5 +1,6 @@
 import { Modal } from 'bootstrap';
 const header = require('../partials/header.handlebars');
+const main = require('../partials/main.handlebars');
 const category = require('../partials/category.handlebars');
 const addModal = require('../partials/add-modal.handlebars');
 const authModal = require('../partials/auth-modal.handlebars');
@@ -8,4 +9,4 @@ const footer = require('../partials/footer.handlebars');
 const productModal = require('../partials/product-modal.handlebars');
 const searchModal = require('../partials/search-modal.handlebars');
 
-export default [header,authModal, searchModal, addModal, myCalls, productModal, footer]
+export default [header, main, authModal, addModal, myCalls, productModal, footer, searchModal]

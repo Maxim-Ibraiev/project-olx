@@ -6,7 +6,7 @@ export default class ApiService {
   }
 
   fetchSearchQuery() {
-    console.log(this);
+    
     return fetch(
       `https://callboard-backend.herokuapp.com/call/find?search=${this.searchQuery}`,
     )
