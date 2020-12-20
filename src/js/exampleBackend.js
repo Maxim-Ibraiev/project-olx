@@ -1,3 +1,5 @@
+import { data } from "jquery";
+
 const BASE_URL = 'https://callboard-backend.herokuapp.com';
 
 const postToAdd = {
@@ -37,6 +39,23 @@ fetch(urlAuthRegister, option)
 
 const urlAuthLogin = `${BASE_URL}/auth/login`;
 
+ async function test () { 
+  const request = await fetch(urlAuthLogin, option)
+  const response = request.json()
+  const token = response.then(data => data.refreshToken)
+  
+  localStorage.setItem('token', token)
+}
+
+
+// const tr = test()
+// .then(data => {
+// console.log(data);
+// console.log(data.refreshToken)
+// return data.refreshToken
+// })
+
+
 // fetch(urlAuthLogin, option)
 //   .then(r => r.json())
 //   .then(console.log);
@@ -67,7 +86,7 @@ fetch(urlAuthUser, {
   headers: myHeaders,
 })
   .then(r => r.json())
-  .then(console.log);
+  // .then(console.log);/
 
 /* Ответ
 {
@@ -85,7 +104,7 @@ const urlCallCategory = `${BASE_URL}/call/categories`;
 
 fetch(urlCallCategory, myHeaders)
   .then(r => r.json())
-  .then(console.log);
+  // .then(console.log);
 
 /* Отвут
 [
@@ -114,7 +133,7 @@ myHeaders.append(
 
 fetch(urlCallCall, myHeadersCall)
   .then(r => r.json())
-  .then(console.log);
+  // .then(console.log);
 
 /* Ответ
 {
@@ -156,11 +175,22 @@ fetch(urlCallCall, myHeadersCall)
  */
 
 ///////////////// Фаворит добавить /////////////////
+
+const post = {
+  imageUrls: [
+'01101000011101000111010001110000011100110011101000101111001011110110011001110010011001010110010101110000011011100110011101101001011011010110011100101110011000110110111101101101001011110111010001101000011101010110110101100010001011110111011101101001011011100110011101110011001011110011001100110100001110010011010100110010001011010011001100101101011101110110100101101110011001110111001100101101011010010110110101100001011001110110010100101110011100000110111001100111'  ],
+  title: 'Red Shirt',
+  description: 'New red shirt, made from cotton',
+  category: 'business and services',
+  price: 255,
+  phone: '+380000000000',
+}
+
 const callId = '5fd076b7deae5f0017e41a7d';
-const urlCallCFavour = `${BASE_URL}/call/favourite/${callId}`;
+const urlCallCFavour = `${BASE_URL}/call`;
 const optionFavour = {
   method: 'POST',
-  body: JSON.stringify(postToAdd),
+  body: JSON.stringify(post),
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
     'Authorization':
@@ -168,9 +198,9 @@ const optionFavour = {
   },
 };
 
-// fetch(urlCallCFavour, optionFavour)
-//   .then(r => r.json())
-//   .then(console.log);
+fetch(urlCallCFavour, optionFavour)
+  .then(r => r.json())
+  .then(console.log);
 
   /* Ответ
   {"newFavourites":[{"imageUrls":["https://storage.googleapis.com/kidslikev2_bucket/1798bb23-aab7-4b24-9741-529d03356339.jpeg"],"_id":"5fd367626da6ab0017dbf38b","title":"Red Shirt1112","description":"New red shirt, made from cotton","category":"business and services","phone":"+380000000000","price":200,"isOnSale":false,"userId":"5fcf34b02d55d90017ae338f","__v":0}]}
@@ -198,11 +228,16 @@ const optionFavourDel = {
   */
 
   ///////////////// Поиск по заголовку /////////////////
- const urlFind = `${BASE_URL}/call/find?search=Red Shirt1112`;
+//  const urlFind = `${BASE_URL}/call/find?search=Red Shirt1112`;
 
-fetch(urlFind, myHeaders)
-  .then(r => r.json())
-  .then(console.log);
+//  async function test () { 
+//   const request = await fetch(urlFind, myHeaders)
+//   const response = request.json()
+//   console.log('response ', response);
+// }
+// const findId = test()
+
+// console.log(findId.id);
 
   /* Ответ
   [{"_id":"5fd367626da6ab0017dbf38b","imageUrls":["https://storage.googleapis.com/kidslikev2_bucket/1798bb23-aab7-4b24-9741-529d03356339.jpeg"],"title":"Red Shirt1112","description":"New red shirt, made from cotton","category":"business and services","phone":"+380000000000","price":200,"isOnSale":false,"userId":"5fcf34b02d55d90017ae338f","__v":0}]
