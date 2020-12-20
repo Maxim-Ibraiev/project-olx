@@ -17,7 +17,7 @@ let getCategories = async () => {
       .catch(error => console.log('error', error))
 }
 
-let getCategory = ( category ) => {
+let getCategory = (category) => {
   
     fetch(`${BASE_URL}/call/specific/${category}`)
       .then(response => response.json())
@@ -27,10 +27,10 @@ let getCategory = ( category ) => {
 
 
 
-let menuRef = document.querySelector('.filter__item');
+let menuRef = document.querySelector('.filter__inner');
 
 let addMarkup = ( categories ) => {
-    let markup = categories.map( category => `<a href="/${category}.html" data-category="${category}" class="filter__button"${category}">${translationOfWords[category]}</a>`)
+    let markup = categories.map( category => `<li class="filter__item"><button data-category="${category}" class="filter__button"${category}">${translationOfWords[category]}</a></button></li>`)
   menuRef.innerHTML = markup.join(' ')
   
 }
