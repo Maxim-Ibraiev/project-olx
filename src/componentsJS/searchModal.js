@@ -11,7 +11,6 @@ const searchModalInput = document.querySelector('.search-modal-input');
 const searchModalOverlay = document.querySelector('.search-modal-overlay');
 const infoMessage = document.querySelector('.error-message');
 const headerContainer = document.querySelector('.header-container');
-const cardsWrapper = document.querySelector('.cards_wrapper');
 
 searchBtn.addEventListener('click', openSearchModal);
 searchModalCloseIcon.addEventListener('click', closeSearchModal);
@@ -35,7 +34,7 @@ function searchQuery() {
     } else {
         infoMessage.classList.remove('is-open');
         apiService.searchQuery = searchModalInput.value;
-        apiService.fetchSearchQuery().then(cards => appendProdCardsMarkup(cards))
+        apiService.fetchSearchQuery().then(cards => appendProdCardsMarkup(cards));
     }  
 }
 
@@ -52,5 +51,5 @@ function appendProdCardsMarkup(cards) {
 }
 
 function clearProdsCardContainer() {
-  cardsWrapper.innerHTML = '';
+    
 }

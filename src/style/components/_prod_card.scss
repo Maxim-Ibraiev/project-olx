@@ -1,7 +1,6 @@
 .prod_card {
   display: flex;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   margin-right: 20px;
   height: 350px;
   width: 290px;
@@ -17,6 +16,9 @@
   }
   &:nth-child(4n) {
     margin-right: 0px;
+  }
+  &:nth-child(-n + 4) {
+    margin-top: 30px;
   }
   &:nth-child(4n + 1),
   &:first-child {
