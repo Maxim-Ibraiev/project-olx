@@ -1,28 +1,17 @@
 .prod_card {
   display: flex;
   margin-top: 20px;
-  margin-right: 20px;
   height: 350px;
   width: 290px;
   font-weight: 300;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
-  outline: 1px solid blue;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  /* outline: 1px solid blue; */
   &:hover a {
     text-decoration: none;
   }
   &:hover .cover,
   &:focus .cover {
     opacity: 1;
-  }
-  &:nth-child(4n) {
-    margin-right: 0px;
-  }
-  &:nth-child(-n + 4) {
-    margin-top: 30px;
-  }
-  &:nth-child(4n + 1),
-  &:first-child {
-    margin-left: 20px;
   }
 
   @media screen and (min-width: 320px) {
@@ -32,13 +21,35 @@
   @media screen and (min-width: 768px) {
     height: 350px;
     max-width: 352px;
+    margin-right: 20px;
+
+    /*  &:nth-child(-n + 2) {
+      margin-top: 0px;
+    } */
+
+    &:nth-child(2n) {
+      margin-right: 0px;
+    }
   }
   @media screen and (min-width: 1200px) {
     height: 350px;
     max-width: 295px;
+
+    &:nth-child(-n + 4) {
+      margin-top: 0px;
+    }
+
+    &:nth-child(2n) {
+      margin-right: 20px;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0px;
+    }
   }
   &-inner_wrapper {
     position: relative;
+    width: 100%;
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -52,15 +63,13 @@
   }
   &-image {
     display: block;
-    width: 100%;
-    max-width: 352px;
+    height: 100%;
+    width: auto;
     max-height: 275px;
-    margin-top: auto;
-    margin-bottom: auto;
-    overflow: hidden;
+    object-fit: cover;
   }
   &-description {
-    outline: 1px solid orange;
+    /* outline: 1px solid orange; */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -136,4 +145,5 @@
 .cards_wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 }

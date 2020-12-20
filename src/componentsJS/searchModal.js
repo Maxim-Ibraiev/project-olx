@@ -1,8 +1,5 @@
 import ApiService from '../js/api-service';
-<<<<<<< Updated upstream
 import productCard from '../templates/productCard.handlebars';
-=======
->>>>>>> Stashed changes
 
 const apiService = new ApiService();
 
@@ -14,6 +11,7 @@ const searchModalInput = document.querySelector('.search-modal-input');
 const searchModalOverlay = document.querySelector('.search-modal-overlay');
 const infoMessage = document.querySelector('.error-message');
 const headerContainer = document.querySelector('.header-container');
+const mainContainer = document.querySelector('.main-container');
 
 searchBtn.addEventListener('click', openSearchModal);
 searchModalCloseIcon.addEventListener('click', closeSearchModal);
@@ -35,14 +33,10 @@ function searchQuery() {
     if (searchModalInput.value == '') {
         infoMessage.classList.add('is-open')
     } else {
+        clearProdsCardContainer();
         apiService.searchQuery = searchModalInput.value;
         infoMessage.classList.remove('is-open');
-<<<<<<< Updated upstream
-        apiService.searchQuery = searchModalInput.value;
         apiService.fetchSearchQuery().then(cards => appendProdCardsMarkup(cards));
-=======
-        console.log(apiService.fetchSearchQuery());
->>>>>>> Stashed changes
     }  
 }
 
@@ -55,9 +49,13 @@ function keyboardPress(event) {
 }
 
 function appendProdCardsMarkup(cards) {
-  headerContainer.insertAdjacentHTML('afterend', productCard(cards));
+    if (cards.length > 0) {
+        mainContainer.insertAdjacentHTML('afterbegin', productCard(cards));
+    } else {
+        infoMessage.classList.add('is-open')
+    }
 }
 
 function clearProdsCardContainer() {
-    
+    mainContainer.innerHTML = "";
 }
