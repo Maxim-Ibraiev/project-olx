@@ -1,5 +1,8 @@
 import ApiService from '../js/api-service';
+<<<<<<< Updated upstream
 import productCard from '../templates/productCard.handlebars';
+=======
+>>>>>>> Stashed changes
 
 const apiService = new ApiService();
 
@@ -32,9 +35,14 @@ function searchQuery() {
     if (searchModalInput.value == '') {
         infoMessage.classList.add('is-open')
     } else {
+        apiService.searchQuery = searchModalInput.value;
         infoMessage.classList.remove('is-open');
+<<<<<<< Updated upstream
         apiService.searchQuery = searchModalInput.value;
         apiService.fetchSearchQuery().then(cards => appendProdCardsMarkup(cards));
+=======
+        console.log(apiService.fetchSearchQuery());
+>>>>>>> Stashed changes
     }  
 }
 
