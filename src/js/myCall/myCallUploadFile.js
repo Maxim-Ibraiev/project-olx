@@ -12,16 +12,20 @@ export default function uploadFile(file) {
     return;
   }
   let reader = new FileReader();
-  reader.onload = function (e) {
+  reader.onload = function (e) {    
+    
+    for (let ind = 0; ind < refs.myCallImg.children.length; ind++) {
+      const hasSrc = refs.myCallImg.children[ind].children[0].src == 'http://localhost:4444/src/images/placeholder.png'
 
-    refs.myCallImg.insertAdjacentHTML(
-      'afterbegin',
-      `<div class="my-calls-input-placeholders-label">
-          <img class="my-calls-input-placeholders-label-img" src="${e.target.result}">
-        </div>`
-    );
+    }
+
+
+    
+  // }
       
-    refs.myCallImg.lastElementChild.remove()    
+    
+      // console.dir(refs.myCallImg.children[0].children[0].src);
+      // refs.myCallImg.lastElementChild.remove()    
   };
   reader.onerror = function (e) {
     alert('Помилка завантаження зображення!');

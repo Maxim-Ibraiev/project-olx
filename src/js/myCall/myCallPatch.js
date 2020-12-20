@@ -5,18 +5,18 @@ import refs from '../renderComponentsHTML';
 import currentProd from './currentProd'
 
 refs.myCallImg.addEventListener('change', () => {
-  console.log(refs.myCallInputImg);
   uploadFile(refs.myCallInputImg.files[0]);
 });
-const toPatch = new FormData(form)
+
 refs.myCallInputImg.addEventListener('input', function () {
-  toPatch.append('file', refs.myCallInputImg.files[0]);
+  // toPatch.append('file', refs.myCallInputImg.files[0]);
 });
 
 refs.myCallSavaBtn.addEventListener('click', e => {
   const refreshToken = localStorage.getItem('refreshToken');
   const form = document.querySelector('#form')
   const category = document.querySelector('.my-calls-option').value
+  const toPatch = new FormData(form)
 
   toPatch.append('category',category)
 
