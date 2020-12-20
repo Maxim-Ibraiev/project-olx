@@ -3,6 +3,7 @@ export default {
   addImage: document.querySelector('.add-image'),
   imageList: document.querySelector('.image-preview__add'),
   openModalAddBtn: document.querySelector('.header__create-add-btn'),
+  openModalAddBtnMobile: document.querySelector('.header-add_button'),
   body: document.querySelector('body'),
   addModalOverlay: document.querySelector('.add-modal__overlay'),
   closeModalBtn: document.querySelector('.add-modal__close-btn'),
