@@ -87,7 +87,6 @@
   // border: rebeccapurple 1px solid;
 }
 
-
 .section-title {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -134,7 +133,6 @@
     list-style-type: none;
     width: 100%;
     margin: 0 auto;
-    pointer-events: none;
   }
 }
 
@@ -218,7 +216,7 @@
 
 //Пагинация
 
-.pagination-container{
+.pagination-container {
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 0px;
@@ -247,7 +245,7 @@
   letter-spacing: 0.02em;
   border: none;
   background-color: #ffffff;
-  
+
   cursor: pointer;
 
   @media screen and (min-width: $tablet) {
@@ -268,7 +266,7 @@
     color: #fff;
   }
 
-  &:last-child{
+  &:last-child {
     margin-right: 0px;
   }
 }

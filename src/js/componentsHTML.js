@@ -9,4 +9,4 @@ const footer = require('../partials/footer.handlebars');
 const productModal = require('../partials/product-modal.handlebars');
 const searchModal = require('../partials/search-modal.handlebars');
 
-export default [header, main, authModal, addModal, myCalls, productModal, footer, searchModal]
+export default [header, main, authModal, addModal, myCalls, footer, productModal, searchModal]

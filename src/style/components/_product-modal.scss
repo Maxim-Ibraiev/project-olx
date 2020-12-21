@@ -26,19 +26,21 @@ button {
   display: block;
   background-color: #fff;
   height: auto;
-  &.isClosed {
-    display: none;
+  display: none;
+
+  &.isOpened {
+    display: block;
   }
 
   @media screen and (min-width: 576px) {
     width: 546px;
-    top: 15px;
-    left: 50%;
+    top: 50%;
     transform: translate(-50%, 0);
   }
 
   @media screen and (min-width: 768px) {
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 724px;
   }
@@ -298,5 +300,8 @@ button {
   & svg {
     width: 14px;
     height: 14px;
+  }
+  &:focus {
+    outline: none;
   }
 }

@@ -2,10 +2,12 @@
 import productCardTpl from '../templates/category.handlebars';
 import productCardSaleTpl from '../templates/productCard.handlebars';
 import oneSliderTpl from '../templates/one-slider.handlebars';
+import { openProductModal } from '../componentsJS/product-modal';
 
 
 // import CategoriesApi from './categories-api';
 // const catApi = new CategoriesApi();
+
 
 const mainСontainerRef = document.querySelector('.main-container');
 const BASE_URL = 'https://callboard-backend.herokuapp.com';
@@ -66,12 +68,27 @@ function markOnePage() {
             top: document.body.clientHeight - 2500,
             behavior: 'smooth',
         });
+          
         renderSlaider(result);
         
+              
         return result;
     })
-    .then(response => {
-        renderCard(response);
+        .then(response => {
+            renderCard(response);
+             
+            const galleryRef = document.querySelector('.gallery');
+            galleryRef.addEventListener('click', onOpenModal);
+            
+            function onOpenModal(e) {  
+                e.preventDefault();
+                if (e.target.classList.contains('item-category')) {
+                    const category = e.target.parentElement.dataset.category;
+                    const i = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+                    const product = response[category][i];
+                    openProductModal(product);
+                }
+            }
     });
 
     firstPageBtn.classList.add('is-active');
@@ -101,6 +118,18 @@ function markTwoPage(event) {
     })
     .then(response => {
         renderCard(response);
+        const galleryRef = document.querySelector('.gallery');
+            galleryRef.addEventListener('click', onOpenModal);
+            
+            function onOpenModal(e) {  
+                e.preventDefault();
+                if (e.target.classList.contains('item-category')) {
+                    const category = e.target.parentElement.dataset.category;
+                    const i = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+                    const product = response[category][i];
+                    openProductModal(product);
+                }
+            }
     });
 
     firstPageBtn.classList.remove('is-active');
@@ -122,11 +151,24 @@ function markThreePage(event) {
             behavior: 'smooth',
         });
         renderSlaider(result);
-
+       
         return result;
     })
-    .then(response => {
-        renderCard(response);
+        .then(response => {
+        
+            renderCard(response);
+            const galleryRef = document.querySelector('.gallery');
+            galleryRef.addEventListener('click', onOpenModal);
+            
+            function onOpenModal(e) {  
+                e.preventDefault();
+                if (e.target.classList.contains('item-category')) {
+                    const category = e.target.parentElement.dataset.category;
+                    const i = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+                    const product = response[category][i];
+                    openProductModal(product);
+                }
+            }
     });
 
     firstPageBtn.classList.remove('is-active');
@@ -179,13 +221,13 @@ function translationWordsCategories(arr) {
 mainСontainerRef.addEventListener('click', markOnlyOneCategory);
 
 function markOnlyOneCategory(e) {
-    console.log(`run markOnlyOneCategory `, e.srcElement.dataset.atributeBtn);
+   
 
     if (e.srcElement.dataset.atributeBtn === 'sales') {
         category.category = `${e.srcElement.dataset.atributeBtn}`;
         category.onWork().then(res => {
             mainСontainerRef.innerHTML = productCardSaleTpl(res);
-            console.log(res);
+           
         })
         return;
     }
@@ -194,7 +236,7 @@ function markOnlyOneCategory(e) {
         category.category = `${e.srcElement.dataset.atributeBtn}`;
         category.onWork().then(res => {
             mainСontainerRef.innerHTML = productCardTpl(res);
-            console.log(res);
+            
         })
         return;
     }
@@ -202,7 +244,7 @@ function markOnlyOneCategory(e) {
         category.category = `${e.srcElement.dataset.atributeBtn}`;
         category.onWork().then(res => {
             mainСontainerRef.innerHTML = productCardTpl(res);
-            console.log(res);
+            
         })
         return;
     }

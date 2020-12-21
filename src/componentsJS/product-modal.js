@@ -6,27 +6,34 @@ import refs from '../js/refs';
 import $ from '../../node_modules/jquery/dist/jquery';
 import slick from '../js/slick';
 
-
 refs.closeBtn.addEventListener('click', onModalClose);
 function onModalClose(event) {
 	event.preventDefault();
-	refs.productModal.classList.add('isClosed');
+	refs.productModal.classList.remove('isOpened');
 	refs.productBackdrop.classList.add('isHidden');
 }
 
-apiService.fetchProductData().then(data => {
-	const product = data[7];
+function openProductModal(product) {
 	
+	refs.productModal.classList.add('isOpened');
+	refs.productBackdrop.classList.remove('isHidden');
 	onFetchUserInfo(product);
 	
 	onRenderProductCard(product);
 	
 	onOwnerInfoBtnToggle();
 
-	onSlidesToggle();
+	onSlidesToggle();	
 
-	onFavouritesPush();	
-})
+  // const favouritesBtn = document.querySelector('.js-favourites');
+	// favouritesBtn.addEventListener('click', postProductToFavourites);
+	// apiService.callId = product._id;
+	// function postProductToFavourites() {		
+	// 	apiService.postToFavourites().then(data => {
+	//  console.log(data);
+	// })
+	// }
+}
 
 function onFetchUserInfo(product) {
 	apiService.userId = product.userId;	
@@ -36,13 +43,10 @@ function onFetchUserInfo(product) {
 }
 	
 
-function postProductToFavourites() {
-		apiService.postToFavourites().then(data => {
-	 console.log(data);
-	})
-	}
+
 
 function onRenderProductCard(product) {
+	refs.productContainer.innerHTML = '';
 	const markup = productModalCard(product);
 	refs.productContainer.insertAdjacentHTML('beforeend', markup);
 }
@@ -63,16 +67,9 @@ function onOwnerInfoBtnToggle() {
   }
 }
 
-function onFavouritesPush() {
-	const favouritesBtn = document.querySelector('.js-favourites');
-	favouritesBtn.addEventListener('click', postProductToFavourites);
-}
 
-// function onFavouritesPush() {
-// 	apiService.postToFavourites().then(data => {
-// 	 console.log(data);
-// 	})
-// }
+
+
 
 function onSlidesToggle() {
 	
@@ -98,4 +95,6 @@ function onSlidesToggle() {
 		dots: true,
   });
 }
+
+export { openProductModal };
 

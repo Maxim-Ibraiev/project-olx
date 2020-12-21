@@ -1,13 +1,10 @@
 export default class ApiService {
 	constructor() {
 		this.ownerId = ''
+		// this.productId = ''
+		// this.token = ''
 	}
 
-	fetchProductData() {
-		const url = 'https://callboard-backend.herokuapp.com/call/specific/business and services';
-		return fetch(url)
-			.then(response => response.json());
-	}
 	fetchUserData() {
 		
 		const url = `https://callboard-backend.herokuapp.com/user/${this.ownerId}`;
@@ -24,20 +21,34 @@ export default class ApiService {
 	}
 
 
-	postToFavourites() {
-		const productId = '5fd483ed85dda200172bd016';
-		const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-        'Authorization':
-				'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-			  body: productId,
+	// postToFavourites() {
+	// 	const options = {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json; charset=UTF-8',
+  //       'Authorization': this.token,
+	// 		  body: this.productId,
 			
-      },
-		};
-		const url = `https://callboard-backend.herokuapp.com/call/favourite/${productId}`;
-		return fetch(url, options)
-			.then(response => response.json());
-	}
+  //     },
+	// 	};
+	// 	const url = `https://callboard-backend.herokuapp.com/call/favourite/${this.productId}`;
+	// 	return fetch(url, options)
+	// 		.then(response => response.json());
+	// }
+
+	// get callId() {
+	// 	return this.productId;
+	// }
+
+	// set callId(newProductId) {
+	// 	return this.productId = newProductId;
+	// }
+
+	// get authToken() {
+	// 	return this.token;
+	// }
+
+	// set authToken(newToken) {
+	// 	return this.tokend = newToken;
+	// }
 }
