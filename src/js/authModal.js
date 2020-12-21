@@ -113,15 +113,28 @@ function getAuthInputDataToLogin(event) {
     fetch(urlAuthLogin, option)
       .then(r => r.json())
       .then(data => {
+        if(data.message == 'Password is wrong') {
+          alert('Неверный пароль')
+
+          return
+        }
+
+        if(data.message.split(' ').includes("doesn't")) {
+          alert('Неверный логин')
+
+          return
+        }
+                
         if(data.refreshToken){
         localStorage.setItem('refreshToken', data.refreshToken)
+        switchStatus()
         return
         }
         return new Error
-    }).then(switchStatus)
+        closeModal();
+    })
     .catch(console.log)
 
-    closeModal();
   }
 }
 
@@ -138,7 +151,6 @@ function getAuthInputDataToSignin(event) {
   let authInputData = {};
   authInputData.email = arrAuthInputValue[0];
   authInputData.password = arrAuthInputValue[1];
-  console.log(authInputData);
 
   const urlAuthSignIn = `${BASE_URL}/auth/register`;
   const option = {
@@ -153,8 +165,13 @@ function getAuthInputDataToSignin(event) {
     .then(data => {
       console.log(data);
       delete data.id;
-      console.log(data);
-      getAuthInputDataToLogin(data);
+
+      if(data.message.split(' ').includes('exists')) {
+        alert("Пользователь с такой электронной почтой уже существует")
+      }
+      if(data.login) {
+        getAuthInputDataToLogin(data);
+      }
     });
 }
 
@@ -162,13 +179,15 @@ function closeModal() {
   refs.authModal.classList.add('is-hidden');
 }
 
+//************/
 const modalBtn = document.querySelector('.authorization')
 const accountBtn = document.querySelector('.account')
 const logoutBtn = document.querySelector('.logout')
 
-if(localStorage.getItem('refreshToken')){
+if(localStorage.getItem('refreshToken') && localStorage.getItem('refreshToken') != 'undefined'){
   switchStatus()
 }
+
 function switchStatus() {
 
   if(modalBtn.hasAttribute('hidden')) {
