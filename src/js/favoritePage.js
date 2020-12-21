@@ -1,31 +1,25 @@
-// const openModalFavorite = document.querySelector('.favorite-link');
-// const closeModalFavoriteBtn = document.querySelector('[data-action="close-modal-favorite"]');
+// import { template } from 'handlebars';
+// import productCardTpl from '../templates/category.handlebars';
+import productCardSaleTpl from '../templates/productCard.handlebars';
+import oneSliderFavoriteTpl from '../templates/one-slider-favorite.handlebars';
+import favoritePage from '../partials/favoritePage.handlebars';
 
 
-// openModalFavorite.addEventListener('click', isModalOpen);
-// closeModalFavoriteBtn.addEventListener('click', isModalClose);
+// import CategoriesApi from './categories-api';
+// const catApi = new CategoriesApi();
 
-// function isModalOpen (evt) {
-//     evt.preventDefault();
-//     modalBox.classList.add('is-open-favorite');
-//     // window.addEventListener('keydown', onKeyLeafDown);
-// }
-
-// function isModalClose () {
-//   // if (evt.target.nodeName == 'FORM') {
-//   //   return;
-//   // };
-//   modalBox.classList.remove('is-open-favorite');
-// };
+const mainСontainerRef = document.querySelector('.main-container');
+const paginationContainer = document.querySelector('.pagination-container');
+const BASE_URL = 'https://callboard-backend.herokuapp.com';
+const containerOwn = document.querySelector('[data-action="add-owns"]');
+const containerFavorites = document.querySelector('[data-action="add-favorites"]');
 
 
-const cardContainer = document.querySelector('.product-card-group');
-const favoriteLink = document.querySelector('.favorite-link');
+const goToFavoriteLink = document.querySelector('[data-action="go-to-favorite"]');
 
-// console.log(gallery);
+goToFavoriteLink.addEventListener('click', deleteMain);
 
-favoriteLink.addEventListener('click', replaceCategory);
-
-function replaceCategory () {
-    
+function deleteMain () {
+    mainСontainerRef.innerHTML = favoritePage();
+    paginationContainer.innerHTML = '';
 }

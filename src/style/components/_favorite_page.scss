@@ -65,8 +65,10 @@
 }
 
 .favorite-title-h2{
+    display: inline-block;
+    min-width: 140px;
     margin-bottom: 0px;
-    text-align: center;
+    // text-align: center;
 
     font-family: 'Montserrat', sans-serif;
     font-style: normal;

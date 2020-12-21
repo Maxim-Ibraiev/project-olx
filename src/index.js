@@ -28,3 +28,5 @@ import './js/menu';
 import './js/main';
 // import './js/categories';
 import './js/favoritePage';
+import './js/addToFavorite';
+import './js/requestFavorite';
