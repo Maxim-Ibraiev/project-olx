@@ -171,18 +171,24 @@
 
 .icon-left,
 .icon-right {
-  --color2: #fff;
-  --color3: #000;
+  // --color2: #fff;
+  fill: #000;
   border-radius: 50%;
+  background-color: #ffffff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+    background-color: $accent;
+    fill:#fff;
+  }
 }
 
-.icon-left:hover,
-.icon-left:focus,
-.icon-left:focus,
-.icon-right:hover {
-  --color2: #ff6b09;
-  --color3: #fff;
-}
 
 .icon-left,
 .icon-right {
