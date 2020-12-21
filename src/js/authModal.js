@@ -182,10 +182,19 @@ function closeModal() {
   refs.authModal.classList.add('is-hidden');
 }
 
+// logout
+const logoutBtn = document.querySelector('.header__button.logout');
+
+logoutBtn.addEventListener('click', onLogout)
+
+function onLogout() {
+  switchStatus()
+  localStorage.removeItem('refreshToken')
+}
+
 //************/
 const modalBtn = document.querySelector('.authorization');
 const accountBtn = document.querySelector('.account');
-const logoutBtn = document.querySelector('.logout');
 
 if (
   localStorage.getItem('refreshToken') &&
