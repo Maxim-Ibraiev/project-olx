@@ -6,7 +6,7 @@ let translationOfWords = {
     'business and services':'Бізнес та услуги',
     'recreation and sport':'Відпочинок і спорт',
     free:'Віддам безкоштовно',
-    trade:'Обмін'
+    trade:'Обмін',
 };
 
 let BASE_URL = 'https://callboard-backend.herokuapp.com';

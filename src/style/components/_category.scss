@@ -12,17 +12,33 @@
 }
 
 .item-category {
+  cursor: pointer;
   width: 290px;
   background-color: #fff;
   margin-bottom: 30px;
   padding-bottom: 20px;
 
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  & p {
+    pointer-events: none;
+  }
+}
+
+.icon-left-svg {
+  border: #bbbbbb;
 }
 
 .img-category {
   position: relative;
   pointer-events: none;
+
+  & > img {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+  }
 }
 
 .img-category:after {
