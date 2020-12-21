@@ -202,12 +202,18 @@
   }
 }
 .header__create-add-btn {
+  width: 188px;
+  
   background-color: $accent;
   color: $secondary;
   border: none;
   &:hover,
   &:focus {
     background-color: #0d0dce;
+  }
+
+  @media screen and (max-width: 768px) {
+  width: 214px;
   }
 }
 
