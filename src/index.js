@@ -19,7 +19,7 @@ import './componentsJS/searchModal';
 // import './componentsJS/prodCard';
 import './js/myCalls';
 import './js/authModal';
-// import './js/exampleBackend'
+// import './js/exampleBackend' 
 import './js/sliderMurkup';
 import './js/slickSlider';
 import './js/menu';
@@ -27,4 +27,5 @@ import './js/menu';
 // import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
 //import './js/cardAddToCategory'
 import './js/main';
-// import './js/categories';
+//import './js/categories';
+import './js/filter';

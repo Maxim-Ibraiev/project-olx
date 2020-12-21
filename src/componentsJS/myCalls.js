@@ -17,10 +17,11 @@ function isModalOpen (evt) {
     // window.addEventListener('keydown', onKeyLeafDown);
 }
 
-function isModalClose () {
+function isModalClose (event) {
   // if (evt.target.nodeName == 'FORM') {
   //   return;
   // };
+  event.preventDefault()
   document.body.classList.remove('is-open');
 };
   

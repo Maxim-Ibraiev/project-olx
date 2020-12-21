@@ -1,22 +1,8 @@
-import refs from './refs';
+import refs from '../refs'
+import currentProd from './currentProd'
 
-const {
-  body,
-  openModalAddBtn,
-  openModalAddBtnMobile,
-  addModalOverlay,
-  selectorCategory,
-} = refs;
-
-openModalAddBtn.addEventListener('click', handleOpenModal);
-openModalAddBtnMobile.addEventListener('click', handleOpenModal);
-
-function handleOpenModal() {
-  addModalOverlay.classList.add('visible');
-  // body.classList.add('hidden');
-}
-
-fetch('https://callboard-backend.herokuapp.com/call/categories')
+// Fill in category
+export default fetch('https://callboard-backend.herokuapp.com/call/categories')
   .then(response => response.json())
   .then(result => {
     let translationOfWords = {
@@ -33,6 +19,9 @@ fetch('https://callboard-backend.herokuapp.com/call/categories')
       category =>
         `<option value="${category}" class="select-option">${translationOfWords[category]}</option> `,
     );
-    selectorCategory.insertAdjacentHTML('beforeend', markup);
+    refs.myCallOption.insertAdjacentHTML('beforeend', markup);
+  })
+  .then(() => {
+    refs.myCallOption.value = currentProd.category;
   })
   .catch(error => console.log('error', error));

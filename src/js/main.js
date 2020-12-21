@@ -217,7 +217,7 @@ function translationWordsCategories(arr) {
     })
     return newArr;
 }
-
+/*
 mainСontainerRef.addEventListener('click', markOnlyOneCategory);
 
 function markOnlyOneCategory(e) {
@@ -249,4 +249,14 @@ function markOnlyOneCategory(e) {
         return;
     }
 
+    if (e.srcElement.dataset.atributeBtn === 'businessAndServices') {
+        category.category = `${e.srcElement.dataset.atributeBtn}`;
+        category.onWork().then(res => {
+            mainСontainerRef.innerHTML = productCardTpl(res);
+            console.log(res);
+        })
+        return;
+    }
+
 }
+*/
