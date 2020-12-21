@@ -64,6 +64,7 @@ function transportFn() {
 }
 
 function rendTransport(data) {
+  console.log('data', data);
   rendCategory.transport.insertAdjacentHTML('beforeend', categoryTpl(data));
 }
 

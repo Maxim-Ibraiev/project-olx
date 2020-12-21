@@ -26,6 +26,7 @@
 
 .img-category {
   position: relative;
+  pointer-events: none;
 
   & > img {
     display: block;
@@ -159,6 +160,7 @@
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.07em;
+  pointer-events: none;
 }
 
 .price {
