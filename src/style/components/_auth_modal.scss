@@ -27,6 +27,10 @@ body.modal-open {
   }
   
   .auth-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding-right: 15px;
     padding-left: 15px;
     margin-left: auto;
@@ -64,6 +68,9 @@ body.modal-open {
     @media screen and (min-width: $mobile-upper) {
         padding-left: 103px;
         padding-right: 102px; 
+  }
+    @media screen and (min-width: 768px) {
+        width: 650px;
   }
   
   &-close{
@@ -139,7 +146,7 @@ body.modal-open {
     font-weight: 400;
     border: 1px solid #BBBBBB;
 
-    @media screen and (min-width: $mobile-upper) {
+    @media screen and (min-width: 320px) {
         width: 442px;
     }
 }
@@ -215,7 +222,77 @@ body.modal-open {
     top:50px;
 }
 
+.my-office {
+    margin-left: 10px;
+}
 
+.header__button.logout {
+    height: 70px;
+    
+    padding: 20px;
+    border: 1px solid #E2E3E5;
+}
+
+.header__button.account{
+    height: 70px;
+    padding: 20px;
+
+    &:hover .auth-hover{
+            transition-property: opacity;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+    
+            top: 100%;
+        
+    }
+}
+
+.online {
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+text-transform: uppercase;
+}
+.account {
+    position: relative;
+}
+.auth-hover {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    position: absolute;
+    left: 8px;
+    top: 90%;
+
+    width: 206px;
+    height: 94px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+    padding-left: 20px;
+    
+    background: #F5F6FB;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
+    
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    letter-spacing: 0.02em;
+    
+    
+}
 // .auth-input-label + .auth-modal-input:focus,
 // .auth-input-label + .auth-modal-input:not(:placeholder-shown) {
 //     color: #2196F3;
