@@ -1,5 +1,5 @@
 .section {
-  background-color: #eeeeee;
+  // background-color: #eeeeee;
   padding-top: 30px;
   padding-bottom: 30px;
   // border: solid 1px red;
@@ -66,6 +66,7 @@
 
 .categories-title {
   display: flex;
+  align-items: center;
 
   margin-top: 25px;
   margin-bottom: 25px;
