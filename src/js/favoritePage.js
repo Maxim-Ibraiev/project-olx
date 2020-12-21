@@ -1,7 +1,6 @@
 // import { template } from 'handlebars';
 // import productCardTpl from '../templates/category.handlebars';
 import productCardSaleTpl from '../templates/productCard.handlebars';
-import oneSliderFavoriteTpl from '../templates/one-slider-favorite.handlebars';
 import favoritePage from '../partials/favoritePage.handlebars';
 
 
