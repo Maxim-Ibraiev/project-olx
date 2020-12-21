@@ -26,4 +26,4 @@ import './js/menu';
 // import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
 //import './js/cardAddToCategory'
 import './js/main';
-// import './js/categories';
+//import './js/categories';
