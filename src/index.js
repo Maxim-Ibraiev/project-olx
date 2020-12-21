@@ -27,3 +27,4 @@ import './js/menu';
 //import './js/cardAddToCategory'
 import './js/main';
 // import './js/categories';
+import './js/favoritePage';
