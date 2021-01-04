@@ -119,17 +119,17 @@ function getAuthInputDataToLogin(event) {
           return;
         }
 
-        if(data.message != undefined) {
-
+        if (data.message != undefined) {
           if (data.message.split(' ').includes("doesn't")) {
             alert('Неверный логин');
-            
+
             return;
           }
         }
 
         if (data.refreshToken) {
           localStorage.setItem('refreshToken', data.refreshToken);
+          localStorage.setItem('accessToken', data.accessToken);
           switchStatus();
           closeModal();
           return;
@@ -167,11 +167,10 @@ function getAuthInputDataToSignin(event) {
       console.log(data);
       delete data.id;
 
-      if(data.message) {
-
+      if (data.message) {
         if (data.message.split(' ').includes('exists')) {
           alert('Пользователь с такой электронной почтой уже существует');
-          return
+          return;
         }
       }
       getAuthInputDataToLogin(data);
@@ -185,11 +184,11 @@ function closeModal() {
 // logout
 const logoutBtn = document.querySelector('.header__button.logout');
 
-logoutBtn.addEventListener('click', onLogout)
+logoutBtn.addEventListener('click', onLogout);
 
 function onLogout() {
-  switchStatus()
-  localStorage.removeItem('refreshToken')
+  switchStatus();
+  localStorage.removeItem('refreshToken');
 }
 
 //************/

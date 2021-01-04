@@ -9,8 +9,8 @@ body.hidden {
   top: 0;
   left: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
   overflow-x: hidden;
 }
 .add-modal__overlay.visible {
@@ -31,9 +31,9 @@ body.hidden {
 // }
 .add-modal__content {
   position: absolute;
-  top: 50%;
+  top: 13px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   width: 290px;
   // height: 875px;
   overflow: auto;
@@ -45,10 +45,12 @@ body.hidden {
   @media screen and (min-width: 768px) {
     width: 724px;
     // height: 698px;
+    top: 163px;
     padding: 54px 54px 60px;
   }
   @media screen and (min-width: 1280px) {
     width: 861px;
+    top: 126px;
     padding: 54px 105px 60px;
   }
 }

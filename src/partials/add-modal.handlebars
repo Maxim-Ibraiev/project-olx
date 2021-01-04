@@ -14,12 +14,7 @@
           <div class="add-form__item">
             <label class="add-form__label" for="form-name">Назва товару</label>
             <div class="input-wrapper">
-              <input
-              name="title"
-                id="form-name"
-                type="text"
-                class="add-form__name _req _name input"
-              />
+              <input name="title" id="form-name" type="text" class="add-form__name _req _name input" />
               <div class="add-form__error-message">
                 Додайте назву товару!
               </div>
@@ -32,12 +27,31 @@
               <ul class="image-preview__add _req">
                 <li class="image-preview__item">
                   <div class="choose-image">
-                    <input
-                    name="file"
-                      accept=".jpg"
-                      type="file"
-                      class="choose-image__input add-image"
-                    />
+                    <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+                    <div class="image-button">+</div>
+                  </div>
+                </li>
+                <li class="image-preview__item">
+                  <div class="choose-image">
+                    <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+                    <div class="image-button">+</div>
+                  </div>
+                </li>
+                <li class="image-preview__item">
+                  <div class="choose-image">
+                    <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+                    <div class="image-button">+</div>
+                  </div>
+                </li>
+                <li class="image-preview__item">
+                  <div class="choose-image">
+                    <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+                    <div class="image-button">+</div>
+                  </div>
+                </li>
+                <li class="image-preview__item">
+                  <div class="choose-image">
+                    <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
                     <div class="image-button">+</div>
                   </div>
                 </li>
@@ -49,15 +63,10 @@
           </div>
 
           <div class="add-form__item">
-            <label class="add-form__label" for="form-description"
-              >Опис товару</label
-            >
+            <label class="add-form__label" for="form-description">Опис товару</label>
             <div class="input-wrapper">
-              <textarea
-                name="description"
-                id="form-description"
-                class="add-form__description _description _req input"
-              ></textarea>
+              <textarea name="description" id="form-description"
+                class="add-form__description _description _req input"></textarea>
               <div class="add-form__error-message">
                 Мінімум 5 символів!
               </div>
@@ -67,14 +76,8 @@
           <div class="add-form__item">
             <div class="add-form__label">Категорія товару</div>
             <div class="select-wrapper">
-              <select
-                name="category"
-                class="add-form__select _category _req input"
-              >
-                <option
-                  value="category"
-                  class="select-option select-option-first"
-                >
+              <select name="category" class="add-form__select _category _req input">
+                <option value="category" class="select-option select-option-first">
                   Категорія
                 </option>
               </select>
@@ -85,17 +88,9 @@
           <div class="add-form__item">
             <label class="add-form__label" for="form-price">Ціна</label>
             <div class="input-wrapper">
-              <input
-                type="text"
-                id="form-price"
-                name="price"
-                data-source="price"
-                class="add-form__product-price _price _req input"
-                autocomplete="off"
-                minlength="1"
-                maxlength="16"
-                placeholder="0.00 грн"
-              />
+              <input type="text" id="form-price" name="price" data-source="price"
+                class="add-form__product-price _price _req input" autocomplete="off" minlength="1" maxlength="16"
+                placeholder="0.00 грн" />
               <div class="add-form__error-message">
                 Додайте ціну товару!
               </div>
@@ -108,14 +103,8 @@
           <div class="add-form__item">
             <label class="add-form__label" for="form-phone">Телефон</label>
             <div class="input-wrapper">
-              <input
-                id="form-phone"
-                type="tel"
-                name="phone"
-                data-source="phone"
-                class="add-form__product-telephone-number _phone _req input"
-                placeholder="+38(0--) --- -- --"
-              />
+              <input id="form-phone" type="tel" name="phone" data-source="phone"
+                class="add-form__product-telephone-number _phone _req input" placeholder="+38(0--) --- -- --" />
               <div class="add-form__error-message">Додайте номер телефону!</div>
             </div>
           </div>
