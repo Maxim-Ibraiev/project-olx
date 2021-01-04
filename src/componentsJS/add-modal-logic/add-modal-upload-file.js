@@ -2,7 +2,7 @@ import refs from './refs';
 
 const { addImage, imageList } = refs;
 
-export default function uploadFile(file) {
+export default function uploadFile(event, file) {
   if (!['image/jpeg'].includes(file.type)) {
     alert('Зображення тільки формату .jpeg!');
     addImage.value = '';
@@ -14,13 +14,15 @@ export default function uploadFile(file) {
     return;
   }
   let reader = new FileReader();
+
   reader.onload = function (e) {
-    imageList.insertAdjacentHTML(
+    event.target.parentNode.parentNode.insertAdjacentHTML(
       'beforeend',
-      `<li class="image-preview__item"><img src="${e.target.result}" alt="" /></li>`,
+      `<img class="image-preview__item" style="position: absolute; width: 100%; object-fit: contain " src="${e.target.result}" alt="" />`,
     );
   };
-  reader.onerror = function (e) {
+
+  reader.onerror = function () {
     alert('Помилка завантаження зображення!');
   };
 

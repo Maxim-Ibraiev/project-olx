@@ -15,7 +15,7 @@ export default function (form) {
     element.nextElementSibling.classList.remove('visible');
 
     if (element.classList.contains('_name')) {
-      if (element.value.length <= 3 || element.value.length >= 15) {
+      if (element.value.length <= 3 || element.value.length >= 40) {
         element.nextElementSibling.classList.add('visible');
         error += 1;
       }

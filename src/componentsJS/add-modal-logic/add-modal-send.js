@@ -3,54 +3,51 @@ import refs from './refs';
 import formValidate from './add-modal-validation';
 import { handleCloseModal } from './add-modal-close';
 
-const { form, addImage, imageList } = refs;
+const refreshToken = localStorage.getItem('refreshToken');
+const { form, AddProductBtn, imageList } = refs;
 
 form.addEventListener('submit', formSend);
 
 async function formSend(e) {
   e.preventDefault();
-
   let error = formValidate(form);
-  const accessToken = sessionStorage.getItem('token');
 
   if (error === 0) {
-    const formdata = new FormData(form);
+    const formData = new FormData(form);
     var myHeaders = new Headers();
-    myHeaders.append(
-      'Authorization',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1ZmQzMzJhNjgwZGFiZDAwMTc5ZDdmYWYiLCJzaWQiOiI1ZmQzMzUzYTgwZGFiZDAwMTc5ZDdmZTQiLCJpYXQiOjE2MDc2NzcyNDIsImV4cCI6MTYxMDMwNTI0Mn0.k7ClxKFHWx8UIIIIY0VZmvB7mOnpOvK7N00Mk6jdotc',
-      `${accessToken}`,
-    );
+    myHeaders.append('Authorization', refreshToken);
     // Bearer-когда авторизован вставить это.;
 
     var requestOptions = {
       method: 'POST',
       headers: myHeaders,
-      body: formdata,
+      body: formData,
       redirect: 'follow',
     };
+    refs.AddProductBtn.disabled = true;
 
     fetch('https://callboard-backend.herokuapp.com/call/', requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        console.log(result);
+      .then(response => {
         handleCloseModal();
+        return response.json();
       })
-      .catch(error => console.log('error', error));
+      .catch(error => console.log('error', error))
+      .finally(() => (refs.AddProductBtn.disabled = false));
   } else {
     alert('Заповніть будь-ласка всі поля');
   }
 }
 
-addImage.addEventListener('change', () => {
-  uploadFile(addImage.files[0]);
+imageList.addEventListener('change', event => {
+  uploadFile(event, event.target.files[0]);
 });
 
 imageList.addEventListener('click', e => {
   if (e.target.tagName === 'IMG') {
     const remove = confirm('Ви впевнені що бажаєте видалити фото зі списку?');
     if (remove) {
-      e.target.parentNode.remove();
+      e.target.previousElementSibling.firstElementChild.value = '';
+      e.target.remove();
     }
   }
 });

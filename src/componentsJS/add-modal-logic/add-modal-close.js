@@ -30,13 +30,34 @@ function replaceImagePreview() {
   imageList.innerHTML = '';
   imageList.insertAdjacentHTML(
     'beforeend',
-    `<li class="image-preview__item">
+    `
+    <li class="image-preview__item">
       <div class="choose-image">
-        <input
-          accept=".jpg"
-          type="file"
-          class="choose-image__input"
-        />
+        <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+        <div class="image-button">+</div>
+      </div>
+    </li>
+    <li class="image-preview__item">
+      <div class="choose-image">
+        <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+        <div class="image-button">+</div>
+      </div>
+    </li>
+    <li class="image-preview__item">
+      <div class="choose-image">
+        <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+        <div class="image-button">+</div>
+      </div>
+    </li>
+    <li class="image-preview__item">
+      <div class="choose-image">
+        <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
+        <div class="image-button">+</div>
+      </div>
+    </li>
+    <li class="image-preview__item">
+      <div class="choose-image">
+        <input name="file" accept=".jpg" type="file" class="choose-image__input add-image" />
         <div class="image-button">+</div>
       </div>
     </li>`,
