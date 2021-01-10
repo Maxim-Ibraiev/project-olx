@@ -25,14 +25,14 @@ function openProductModal(product) {
 
 	onSlidesToggle();	
 
-  // const favouritesBtn = document.querySelector('.js-favourites');
-	// favouritesBtn.addEventListener('click', postProductToFavourites);
-	// apiService.callId = product._id;
-	// function postProductToFavourites() {		
-	// 	apiService.postToFavourites().then(data => {
-	//  console.log(data);
-	// })
-	// }
+  const favouritesBtn = document.querySelector('.js-favourites');
+	favouritesBtn.addEventListener('click', postProductToFavourites);
+	apiService.callId = product._id;
+	function postProductToFavourites() {		
+		apiService.postToFavourites().then(data => {
+	 console.log(data);
+	})
+	}
 }
 
 function onFetchUserInfo(product) {
@@ -41,9 +41,6 @@ function onFetchUserInfo(product) {
 		onRenderUserInfo(data);
 	})
 }
-	
-
-
 
 function onRenderProductCard(product) {
 	refs.productContainer.innerHTML = '';

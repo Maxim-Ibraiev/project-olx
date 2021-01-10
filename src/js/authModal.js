@@ -86,7 +86,7 @@ signInBtnRef.addEventListener('click', getAuthInputDataToSignin);
 
 // Log-in
 function getAuthInputDataToLogin(event) {
-  if(!event.email) event.preventDefault();
+  if (!event.email) event.preventDefault();
   validateFormFunction();
 
   const arrAuthInputValue = Array.from(authInputs).reduce((acc, el) => {
@@ -113,15 +113,29 @@ function getAuthInputDataToLogin(event) {
     fetch(urlAuthLogin, option)
       .then(r => r.json())
       .then(data => {
-        if(data.refreshToken){
-        localStorage.setItem('refreshToken', data.refreshToken)
-        return
-        }
-        return new Error
-    }).then(switchStatus)
-    .catch(console.log)
+        if (data.message == 'Password is wrong') {
+          alert('Неверный пароль');
 
-    closeModal();
+          return;
+        }
+
+        if(data.message != undefined) {
+
+          if (data.message.split(' ').includes("doesn't")) {
+            alert('Неверный логин');
+            
+            return;
+          }
+        }
+
+        if (data.refreshToken) {
+          localStorage.setItem('refreshToken', data.refreshToken);
+          switchStatus();
+          closeModal();
+          return;
+        }
+      })
+      .catch(console.log);
   }
 }
 
@@ -138,12 +152,11 @@ function getAuthInputDataToSignin(event) {
   let authInputData = {};
   authInputData.email = arrAuthInputValue[0];
   authInputData.password = arrAuthInputValue[1];
-  console.log(authInputData);
 
   const urlAuthSignIn = `${BASE_URL}/auth/register`;
   const option = {
     method: 'POST',
-    body: JSON.stringify(authInputData  ),
+    body: JSON.stringify(authInputData),
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -153,7 +166,14 @@ function getAuthInputDataToSignin(event) {
     .then(data => {
       console.log(data);
       delete data.id;
-      console.log(data);
+
+      if(data.message) {
+
+        if (data.message.split(' ').includes('exists')) {
+          alert('Пользователь с такой электронной почтой уже существует');
+          return
+        }
+      }
       getAuthInputDataToLogin(data);
     });
 }
@@ -162,23 +182,27 @@ function closeModal() {
   refs.authModal.classList.add('is-hidden');
 }
 
-const modalBtn = document.querySelector('.authorization')
-const accountBtn = document.querySelector('.account')
-const logoutBtn = document.querySelector('.logout')
+//************/
+const modalBtn = document.querySelector('.authorization');
+const accountBtn = document.querySelector('.account');
+const logoutBtn = document.querySelector('.logout');
 
-if(localStorage.getItem('refreshToken')){
-  switchStatus()
+if (
+  localStorage.getItem('refreshToken') &&
+  localStorage.getItem('refreshToken') != 'undefined'
+) {
+  switchStatus();
 }
+
 function switchStatus() {
+  if (modalBtn.hasAttribute('hidden')) {
+    modalBtn.removeAttribute('hidden');
+    accountBtn.hidden = true;
+    logoutBtn.hidden = true;
 
-  if(modalBtn.hasAttribute('hidden')) {
-    modalBtn.removeAttribute('hidden')
-    accountBtn.hidden = true
-    logoutBtn.hidden = true
-
-    return
+    return;
   }
-  modalBtn.hidden = true
-  accountBtn.removeAttribute('hidden')
-  logoutBtn.removeAttribute('hidden')
+  modalBtn.hidden = true;
+  accountBtn.removeAttribute('hidden');
+  logoutBtn.removeAttribute('hidden');
 }
